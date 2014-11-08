@@ -2,4 +2,26 @@ body
 {
 	background-color: #070707;
 	color: white;
+	
+}
+ul
+{
+	list-style-type: none;
+	font-size: x-large;
+	
+}
+li
+{
+	float: left;
+	padding-right: 50px;
+}
+li:hover
+{
+	border-bottom: 2px solid #ff7e00;
+}
+li img
+{
+	height: 1em;
+	padding-right: 6px;
+	vertical-align:middle;
 }
