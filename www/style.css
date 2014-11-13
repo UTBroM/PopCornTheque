@@ -8,6 +8,7 @@ ul
 {
 	list-style-type: none;
 	font-size: x-large;
+    padding-left: 0px;
 	
 }
 li
@@ -18,6 +19,7 @@ li
 li:hover
 {
 	border-bottom: 2px solid #ff7e00;
+    padding-bottom: 2px;
 }
 li img
 {
