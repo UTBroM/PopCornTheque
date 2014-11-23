@@ -2,14 +2,14 @@ body
 {
 	background-color: #070707;
 	color: white;
-	
+
 }
 ul
 {
 	list-style-type: none;
 	font-size: x-large;
-    padding-left: 0px;
-	
+	padding-left: 0px;
+
 }
 li
 {
@@ -28,28 +28,45 @@ li img
 	vertical-align:middle;
 }
 
-.badge {
-    background:             radial-gradient( 5px -9px, circle, white 8%, red 26px );
-        background:    -moz-radial-gradient( 5px -9px, circle, white 8%, red 26px );
-        background:     -ms-radial-gradient( 5px -9px, circle, white 8%, red 26px );
-        background:      -o-radial-gradient( 5px -9px, circle, white 8%, red 26px );
-        background: -webkit-radial-gradient( 5px -9px, circle, white 8%, red 26px );
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
-    box-shadow: 1px 1px 1px black;
-    color: white;
-    font: bold 15px/13px Helvetica, Verdana, Tahoma;
-    height: 16px; 
-    padding: 4px 3px 0 3px;
-    text-align: center;
-    min-width: 14px;
-    
+#badge-plus {
+
+	width: 4em;
+	height: 4em;
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	transition: box-shadow 120ms cubic-bezier(.25,.25,0,1);
+	box-shadow: 0 1em 1em rgba(0,0,0,.28);
+	border-radius: 50%;
+	display: table;
+
+
+	background-color: red;
+	/*border: 2px solid white;
+	border-radius: 12px; /* one half of ( (border * 2) + height + padding )
+	box-shadow: 1px 1px 1px black;
+	color: white;
+	font: bold 15px/13px Helvetica, Verdana, Tahoma;
+	height: 16px; 
+	padding: 4px 3px 0 3px;
+	text-align: center;
+	min-width: 14px;*/
+
 }
 
-/* only needed for this sample */
-.badge {
-    float: left;
+#badge-plus p {
+
+	/*margin: auto;*/
+	/*height: 20%;*/
+	/*width: 20%;*/
+	/*position: absolute;*/
+	/*top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;*/
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
 
 }
 
