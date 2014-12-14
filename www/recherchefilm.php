@@ -11,7 +11,16 @@
 
                 echo '<p>', $Film->Title, '</p></br>';
 		$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
-                echo '<img src="', $details->Poster, '"\/></br>';
+                $posterURL = $details->Poster;
+
+                if ($posterURL != "N/A"){
+
+                        //$posterFile = basename($posterURL);
+                        //file_put_contents(tempPoster/$posterFile, fopen($posterURL, 'r'));
+                        echo '<img src="', $posterURL, '"></br>';
+
+                }
+
 
 
         }
