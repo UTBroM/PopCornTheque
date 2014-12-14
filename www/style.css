@@ -26,6 +26,7 @@ li img
 	height: 1em;
 	padding-right: 6px;
 	vertical-align:middle;
+	-webkit-user-drag: none;
 }
 
 #badge-plus {
@@ -36,7 +37,7 @@ li img
 	bottom: 1em;
 	right: 1em;
 	transition: box-shadow 120ms cubic-bezier(.25,.25,0,1);
-	box-shadow: 0 1em 1em rgba(0,0,0,.28);
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	border-radius: 50%;
 	/*display: table;*/
 
@@ -51,6 +52,9 @@ li img
 	padding: 4px 3px 0 3px;
 	text-align: center;
 	min-width: 14px;*/
+
+	transform: scale(1) rotate(360deg);
+	transition: transform 300ms cubic-bezier(.4,0,1,1);
 
 }
 
@@ -75,4 +79,15 @@ li img
 
 }
 
+#badge-plus:hover{
+
+	box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+
+}
+
+#badge-plus:active{
+
+	box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)
+
+}
 
