@@ -5,7 +5,7 @@
 
         $filmrecherche = $_POST['Film'];
 
-        $object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$fil$
+        $object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$filmrecherche"));
 
         foreach($object->Search as $Film){
 
