@@ -1,4 +1,4 @@
-<p>Tu veux trouver le film : <?php echo $_POST['Film']; ?></p>
+<p>Tu veux trouver le film : <?php echo htmlspecialchars($_POST['Film']); ?></p>
 </br>
 
 <?php
