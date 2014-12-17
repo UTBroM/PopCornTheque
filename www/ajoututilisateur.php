@@ -21,7 +21,7 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO USER VALUES(:user, :password, :nom, :prenom, :date_naissance, :rue, :code_postal, :ville, :mail)');
+	$req = $bdd->prepare('INSERT INTO UTILISATEURS VALUES(:user, :password, :nom, :prenom, :date_naissance, :rue, :code_postal, :ville, :mail)');
 	$req->execute(array(
 		'user' => $user,
 		'password' => $password,
