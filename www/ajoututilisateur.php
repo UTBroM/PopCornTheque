@@ -2,7 +2,7 @@
 
 	ini_set('display_errors', 'On');
 
-	$user = $_POST['user']
+	$user = $_POST['user'];
 	$password = sha1($_POST['password']);
 	$nom = $_POST['nom'];
 	$prenom = $_POST['prenom'];
