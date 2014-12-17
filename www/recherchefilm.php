@@ -7,7 +7,7 @@
         ini_set('display_errors', 'On');
         $t1=time();
 
-        $filmrecherche = $_POST['Film'];
+        $filmrecherche = urlencode($_POST['Film']);
 
         $object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$filmrecherche"));
 
