@@ -11,15 +11,10 @@ ul
 	padding-left: 0px;
 
 }
-li
-{
-	float: left;
-	padding-right: 50px;
-}
 li:hover
 {
 	border-bottom: 2px solid #ff7e00;
-    padding-bottom: 2px;
+        padding-bottom: 2px;
 }
 li img
 {
@@ -90,4 +85,16 @@ li img
 	box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)
 
 }
+
+.tableau-film{
+
+	float: left;
+	padding-right: 100px;
+
+}
+
+.menu{
+	float: left;
+	padding-right: 50px;	
+}	
 
