@@ -2,6 +2,7 @@
 
 	ini_set('display_errors', 'On');
 
+	$user = $_POST['user']
 	$password = sha1($_POST['password']);
 	$nom = $_POST['nom'];
 	$prenom = $_POST['prenom'];
@@ -20,8 +21,9 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO USER VALUES(NULL, :password, :nom, :prenom, :date_naissance, :rue, :code_postal, :ville, :mail)');
+	$req = $bdd->prepare('INSERT INTO USER VALUES(:user, :password, :nom, :prenom, :date_naissance, :rue, :code_postal, :ville, :mail)');
 	$req->execute(array(
+		'user' => $user,
 		'password' => $password,
 		'nom' => $nom,
 		'prenom' => $prenom,
