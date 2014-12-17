@@ -88,8 +88,20 @@ li img
 }
 .tableau-film{
 
-	margin-top: 100px;	
+	margin-top: 70px;	
 	padding-right: 100px;
+
+}
+.tableau-film li {
+
+	margin: 2px;
+	float: left;	
+	
+
+}
+.tableau-film-image{
+
+	margin: 50px;
 
 }
 .menu{
