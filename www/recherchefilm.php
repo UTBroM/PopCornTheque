@@ -20,7 +20,7 @@
                 if ($posterURL != "N/A"){
 
                         $posterFile = basename($posterURL);
-                        file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
+                        if(file_exists("tempPoster/$posterFile") file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
                         echo '<img src="', "tempPoster/$posterFile", '"></br>';
 
                 }
