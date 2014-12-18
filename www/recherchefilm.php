@@ -1,4 +1,4 @@
-<p>Tu veux trouver le film : <?php echo htmlspecialchars($_POST['Film']); ?></p>
+<p>Recherche du film : <?php echo htmlspecialchars($_POST['Film']); ?></ br>Cliquez sur le film correspondant</p>
 </br>
 
 <?php
@@ -14,7 +14,7 @@
         foreach($object->Search as $Film){
 
 		$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
-                echo '<a href=', "enregistrerfilm.php?detailsfilm=$details", '>', $Film->Title, '</a></br>';
+                echo '<a href=', "enregistrerfilm.php?detailsfilm=$Film->imdbID", '>', $Film->Title, '</a></br>';
                 $posterURL = $details->Poster;
 
                 if ($posterURL != "N/A"){
