@@ -13,8 +13,8 @@
 
         foreach($object->Search as $Film){
 
-                echo '<p>', $Film->Title, '</p></br>';
-                $details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
+		$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
+                echo '<a href=', "enregistrerfilm.php?detailsfilm=$details", '>', $Film->Title, '</a></br>';
                 $posterURL = $details->Poster;
 
                 if ($posterURL != "N/A"){
