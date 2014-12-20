@@ -7,7 +7,7 @@
 
         $details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$_GET['detailsfilm']&plot=full&r=json"));
 
-        $sortie = date(Y-m-d,strtotime($details->Released));
+        $sortie = date("Y-m-d",strtotime($details->Released));
         $poster = tempPoster/basename($details->Poster);
 
         try
