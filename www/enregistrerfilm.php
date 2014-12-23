@@ -39,7 +39,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$req = $bdd->prepare('INSERT INTO FILM OUTPUT INSERTED.FILM_ID VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
+			$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
 			$req->execute(array(
 				'titre' => $details->Title,
 				'synopsis' => $details->Plot,
@@ -48,20 +48,20 @@
 				'age' => $details->Rated
 			));
 
-			$filmid = $req->fetch();
+			$filmid = $bdd->lastInsertId('FILM');
 
 			$listeacteurs = explode(", ", $details->Actors);
 
 			foreach($listeacteurs as $acteur){
 
 				$curacteur = explode(" ",$acteur);
-				$req = $bdd->prepare('INSERT INTO ARTISTE OUTPUT INSERTED.ART_ID VALUES(NULL, :nom, :prenom)');
+				$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
 				$req->execute(array(
 					'nom' => $curacteur[1],
 					'prenom' => $curacteur[0]
 				));
 
-				$artid = $req->fetch();
+				$artid = $bdd->lastInsertId('ARTISTE');
 
 				$req = $bdd->prepare('INSERT INTO AVOIR_JOUE_DANS VALUES(:idfilm, :idart)');
 				$req->execute(array(
@@ -72,13 +72,13 @@
 			}
 
 			$directeur = explode(" ",$details->Director);
-			$req = $bdd->prepare('INSERT INTO ARTISTE OUTPUT INSERTED.ART_ID VALUES(NULL, :nom, :prenom)');
+			$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
 			$req->execute(array(
 				'nom' => $directeur[1],
 				'prenom' => $directeur[0]
 			));
 
-			$artid = $req->fetch();
+			$artid = $bdd->lastInsertId('ARTISTE');
 
 			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idfilm, :idart)');
 			$req->execute(array(
