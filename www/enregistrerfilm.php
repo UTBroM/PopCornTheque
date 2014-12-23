@@ -9,11 +9,11 @@
 	$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
 
 	$sortie = date("Y-m-d",strtotime($details->Released));
+	$posterURL = $details->Poster;
 	$poster = NULL;
 
 	if ($posterURL != "N/A"){
 
-		$posterURL = $details->Poster;
 		$posterFile = basename($posterURL);
 		$poster = "tempPoster/$posterFile";
 
