@@ -62,9 +62,9 @@
 				));
 
 
-				$req = $bdd->prepare('SELECT ART_ID FROM `ARTISTE` WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
+				$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
 				$req->execute(array(
-					'nom' => $curacteur[1]
+					'nom' => $curacteur[1],
 					'prenom' => $curacteur[0]
 				));
 				$artid = $req->fetch();
@@ -84,9 +84,9 @@
 				'prenom' => $directeur[0]
 			));
 
-			$req = $bdd->prepare('SELECT ART_ID FROM `ARTISTE` WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
+			$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
 			$req->execute(array(
-				'nom' => $directeur[1]
+				'nom' => $directeur[1],
 				'prenom' => $directeur[0]
 			));
 			$artid = $req->fetch();
