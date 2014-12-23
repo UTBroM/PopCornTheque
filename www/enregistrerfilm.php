@@ -80,7 +80,7 @@
 
 			$artid = $bdd->lastInsertId('ARTISTE');
 
-			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idfilm, :idart)');
+			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
 			$req->execute(array(
 				'idfilm' => $filmid,
 				'idart' => $artid
