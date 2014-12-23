@@ -61,6 +61,13 @@
 
 			}
 
+			$directeur = explode(" ",$details->Director);
+			$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+			$req->execute(array(
+				'nom' => $directeur[1],
+				'prenom' => $directeur[0]
+			));
+
 		?>
 	</body>
 </html>
