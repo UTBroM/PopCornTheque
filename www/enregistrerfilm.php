@@ -48,7 +48,18 @@
 				'age' => $details->Rated
 			));
 
+			$listeacteurs = explode(", ", $details->Actors);
 
+			foreach($listeacteurs as $acteur){
+
+				$curacteur = explode(" ",$acteur);
+				$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+				$req->execute(array(
+					'nom' => $curacteur[1],
+					'prenom' => $curacteur[0]
+				));
+
+			}
 
 		?>
 	</body>
