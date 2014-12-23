@@ -1,46 +1,56 @@
-<?php
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" />
+	<title>PopcornTeque</title>
+	</head>
 
-	ini_set('display_errors', 'On');
+	<body>
+		<?php
 
-	echo "ça marche !";
+			ini_set('display_errors', 'On');
 
-	$idfilm = $_GET['detailsfilm'];
+			echo "Film sauvegardé";
 
-	$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
+			$idfilm = $_GET['detailsfilm'];
 
-	$sortie = date("Y-m-d",strtotime($details->Released));
-	$posterURL = $details->Poster;
-	$poster = NULL;
+			$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
 
-	if ($posterURL != "N/A"){
+			$sortie = date("Y-m-d",strtotime($details->Released));
+			$posterURL = $details->Poster;
+			$poster = NULL;
 
-		$posterFile = basename($posterURL);
-		$poster = "tempPoster/$posterFile";
+			if ($posterURL != "N/A"){
 
-		if(!file_exists("tempPoster/$posterFile")) file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
+				$posterFile = basename($posterURL);
+				$poster = "tempPoster/$posterFile";
 
-	}
+				if(!file_exists("tempPoster/$posterFile")) file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
 
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
+			}
 
-	$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
-	$req->execute(array(
-		'titre' => $details->Title,
-		'synopsis' => $details->Plot,
-		'sortie' => $sortie,
-		'affiche' => $poster,
-		'age' => $details->Rated
-	));
+			try
+			{
+				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
+			}
+			catch (Exception $e)
+			{
+				die('Erreur : ' . $e->getMessage());
+			}
+
+			$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
+			$req->execute(array(
+				'titre' => $details->Title,
+				'synopsis' => $details->Plot,
+				'sortie' => $sortie,
+				'affiche' => $poster,
+				'age' => $details->Rated
+			));
 
 
 
-?>
-
+		?>
+	</body>
+</html>
 
