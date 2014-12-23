@@ -1,37 +1,48 @@
-<p>Recherche du film : <?php echo htmlspecialchars($_POST['Film']); ?></ br>Cliquez sur le film correspondant</p>
-</br>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+		<title>PopcornTeque</title>
+	</head>
 
-<?php
+	<body>
+		<p>Recherche du film : <?php echo htmlspecialchars($_POST['Film']); ?></ br>Cliquez sur le film correspondant</p>
+		</br>
 
-	ini_set('display_errors', 'On');
-	$t1=time();
+		<?php
 
-	$filmrecherche = urlencode($_POST['Film']);
+			ini_set('display_errors', 'On');
+			$t1=time();
 
-	$object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$filmrecherche"));
+			$filmrecherche = urlencode($_POST['Film']);
 
-	foreach($object->Search as $Film){
+			$object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$filmrecherche"));
 
-		$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
-		echo '<a href=', "enregistrerfilm.php?detailsfilm=$Film->imdbID", '>', $Film->Title, '</a></br>';
-		$posterURL = $details->Poster;
+			foreach($object->Search as $Film){
 
-		if ($posterURL != "N/A"){
+				$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$Film->imdbID&plot=short&r=json"));
+				echo '<a href=', "enregistrerfilm.php?detailsfilm=$Film->imdbID", '>', $Film->Title, '</a></br>';
+				$posterURL = $details->Poster;
 
-			$posterFile = basename($posterURL);
-			if(!file_exists("tempPoster/$posterFile")) file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
-			echo '<img src="', "tempPoster/$posterFile", '"></br>';
+				if ($posterURL != "N/A"){
 
-		}
+					$posterFile = basename($posterURL);
+					if(!file_exists("tempPoster/$posterFile")) file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
+					echo '<img src="', "tempPoster/$posterFile", '"></br>';
+
+				}
 
 
 
-	}
+			}
 
-	$t2=time();
+			$t2=time();
 
-	$t_lapsed=$t2-$t1;
-	echo "Temps d'execution = $t_lapsed";
+			$t_lapsed=$t2-$t1;
+			echo "Temps d'execution = $t_lapsed";
 
-?>
+		?>
 
+	</body>
+</html>
