@@ -7,9 +7,19 @@
 	$idfilm = $_GET['detailsfilm'];
 
 	$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
-	$imagename = basename($details->Poster);
+
 	$sortie = date("Y-m-d",strtotime($details->Released));
-	$poster = "tempPoster/$imagename";
+	$poster = NULL;
+
+	if ($posterURL != "N/A"){
+
+		$posterURL = $details->Poster;
+		$posterFile = basename($posterURL);
+		$poster = "tempPoster/$posterFile";
+
+		if(!file_exists("tempPoster/$posterFile")) file_put_contents("tempPoster/$posterFile", file_get_contents("$posterURL"));
+
+	}
 
 	try
 	{
