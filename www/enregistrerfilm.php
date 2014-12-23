@@ -67,7 +67,7 @@
 					'nom' => $curacteur[1],
 					'prenom' => $curacteur[0]
 				));
-				$artid = $req->fetch();
+				$artid = $req->fetch()[0];
 
 				$req = $bdd->prepare('INSERT INTO AVOIR_JOUE_DANS VALUES(:idfilm, :idart)');
 				$req->execute(array(
@@ -89,7 +89,7 @@
 				'nom' => $directeur[1],
 				'prenom' => $directeur[0]
 			));
-			$artid = $req->fetch();
+			$artid = $req->fetch()[0];
 
 			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
 			$req->execute(array(
