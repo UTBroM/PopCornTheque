@@ -63,11 +63,21 @@
 
 				$artid = $bdd->lastInsertId('ARTISTE');
 
+				if(!isset($artid))
+				{
+
+					$reponse = $bdd->query('SELECT ART_ID FROM `ARTISTE` WHERE ART_NOM = $curacteur[1] AND ART_PRENOM = $curacteur[0]');
+					$artid = $reponse->fetch();
+
+				}
+
 				$req = $bdd->prepare('INSERT INTO AVOIR_JOUE_DANS VALUES(:idfilm, :idart)');
 				$req->execute(array(
 					'idfilm' => $filmid,
 					'idart' => $artid
 				));
+
+				unset($artid);
 
 			}
 
@@ -79,6 +89,14 @@
 			));
 
 			$artid = $bdd->lastInsertId('ARTISTE');
+
+			if(!isset($artid))
+			{
+
+				$reponse = $bdd->query('SELECT ART_ID FROM `ARTISTE` WHERE ART_NOM = $directeur[1] AND ART_PRENOM = $directeur[0]');
+				$artid = $reponse->fetch();
+
+			}
 
 			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
 			$req->execute(array(
