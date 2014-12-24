@@ -1,41 +1,52 @@
-<?php
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+		<title>PopcornTeque</title>
+	</head>
 
-	ini_set('display_errors', 'On');
+	<body>
+		<?php
 
-	session_start();
-	$_SESSION['login'] = '';
-	$_SESSION['password'] = '';
+			ini_set('display_errors', 'On');
 
-	$user = $_POST['user'];
-	$password = sha1($_POST['password']);
+			session_start();
+			$_SESSION['login'] = '';
+			$_SESSION['password'] = '';
 
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
+			$user = $_POST['user'];
+			$password = sha1($_POST['password']);
 
-	$req = $bdd->prepare('SELECT UTI_MOT_DE_PASSE FROM UTILISATEURS WHERE UTI_ID = :nom');
-	$req->execute(array(
-		'nom' => $user
-	));
+			try
+			{
+				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
+			}
+			catch (Exception $e)
+			{
+				die('Erreur : ' . $e->getMessage());
+			}
 
-	$realpassword = $donnees = $req->fetch()[0];
+			$req = $bdd->prepare('SELECT UTI_MOT_DE_PASSE FROM UTILISATEURS WHERE UTI_ID = :nom');
+			$req->execute(array(
+				'nom' => $user
+			));
 
-	if ($realpassword == $password){
+			$realpassword = $donnees = $req->fetch()[0];
 
-		echo "Bon mot de passe";
-		$_SESSION['login'] = $user;
-		$_SESSION['password'] = $password;
+			if ($realpassword == $password){
 
-	}
-	else{
+				echo "Bon mot de passe";
+				$_SESSION['login'] = $user;
+				$_SESSION['password'] = $password;
+
+			}
+			else{
 
 				echo '<p>Mauvais mot de passe</p><p><a href="monespace.php">Accédez à l\'espace ultra sécurisé des membres</a>';
 
-	}
+			}
 
-?>
+		?>
+	</body>
+</html>
