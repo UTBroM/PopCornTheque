@@ -2,15 +2,15 @@
 
 	ini_set('display_errors', 'On');
 
-	$user = htmlspecialchars($_POST['user']);
+	$user = $_POST['user'];
 	$password = sha1($_POST['password']);
-	$nom = htmlspecialchars($_POST['nom']);
-	$prenom = htmlspecialchars($_POST['prenom']);
+	$nom = $_POST['nom'];
+	$prenom = $_POST['prenom'];
 	$date_naissance = $_POST['date_naissance'];
-	$rue = htmlspecialchars($_POST['rue']);
+	$rue = $_POST['rue'];
 	$code_postal = $_POST['code_postal'];
-	$ville = htmlspecialchars($_POST['ville']);
-	$mail = htmlspecialchars($_POST['mail']);
+	$ville = $_POST['ville'];
+	$mail = $_POST['mail'];
 
 	try
 	{
