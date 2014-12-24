@@ -69,7 +69,7 @@
 
 			while($donnees = $reponse->fetch()){
 
-				echo $donnees[0], '<br />';
+				echo htmlspecialchars($donnees[0]), '<br />';
 
 			}
 
