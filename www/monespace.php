@@ -34,7 +34,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$reponse = $bdd->query('SELECT * FROM UTILISATEURS WHERE UTI_ID = :nom');
+			$reponse = $bdd->prepare('SELECT * FROM UTILISATEURS WHERE UTI_ID = :nom');
 			$reponse->execute(array(
 				'nom' => $_SESSION['login']
 			));
