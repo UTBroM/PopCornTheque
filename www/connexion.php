@@ -21,7 +21,7 @@
 
 	$realpassword = $donnees = $req->fetch()[0];
 
-	if ($realpassword = $password){
+	if ($realpassword == $password){
 
 		echo "Bon mot de passe";
 
