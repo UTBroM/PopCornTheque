@@ -12,7 +12,7 @@
 			if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
 			{
 			// la variable 'login' de session est non déclaré ou vide
-			echo '  <p><a href="connexion.php" title="Connexion">Connexion d\'abord !</a></p>';
+			echo '  <p><a href="connexion.html" title="Connexion">Connexion d\'abord !</a></p>';
 			exit();
 			}
 		?>
