@@ -36,14 +36,14 @@
 
 			if ($realpassword == $password){
 
-				echo "Bon mot de passe";
+				echo '<p>Bon mot de passe</p><p><a href="monespace.php">Accédez à l\'espace ultra sécurisé des membres</a></p>';
 				$_SESSION['login'] = $user;
 				$_SESSION['password'] = $password;
 
 			}
 			else{
 
-				echo '<p>Mauvais mot de passe</p><p><a href="monespace.php">Accédez à l\'espace ultra sécurisé des membres</a>';
+				echo '<p>Mauvais mot de passe</p>';
 
 			}
 
