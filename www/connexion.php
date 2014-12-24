@@ -32,7 +32,7 @@
 				'nom' => $user
 			));
 
-			$realpassword = $donnees = $req->fetch()[0];
+			$realpassword = $req->fetch()[0];
 
 			if ($realpassword == $password){
 
