@@ -48,14 +48,14 @@
 
 			<p>
 
-				Nom d'utilisateur : <?php echo $donnees['UTI_ID']; ?><br />
-				Nom : <?php echo $donnees['UTI_NOM']; ?><br />
-				Prénom <?php echo $donnees['UTI_PRENOM']; ?><br />
+				Nom d'utilisateur : <?php echo htmlspecialchars($donnees['UTI_ID']); ?><br />
+				Nom : <?php echo htmlspecialchars($donnees['UTI_NOM']); ?><br />
+				Prénom <?php echo htmlspecialchars($donnees['UTI_PRENOM']); ?><br />
 				Date de naissance : <?php echo $datenaissance; ?><br />
-				Rue : <?php echo $donnees['UTI_RUE']; ?><br />
+				Rue : <?php echo htmlspecialchars($donnees['UTI_RUE']); ?><br />
 				Code postal : <?php echo $donnees['UTI_CODE_POSTAL']; ?><br />
-				Ville : <?php echo $donnees['UTI_VILLE']; ?><br />
-				eMail : <?php echo $donnees['UTI_MAIL']; ?>
+				Ville : <?php echo htmlspecialchars($donnees['UTI_VILLE']); ?><br />
+				eMail : <?php echo htmlspecialchars($donnees['UTI_MAIL']); ?>
 
 			</p>
 
