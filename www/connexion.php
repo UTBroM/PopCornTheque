@@ -34,7 +34,7 @@
 	}
 	else{
 
-		echo "Mauvais mot de passe";
+				echo '<p>Mauvais mot de passe</p><p><a href="monespace.php">Accédez à l\'espace ultra sécurisé des membres</a>';
 
 	}
 
