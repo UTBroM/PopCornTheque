@@ -34,7 +34,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$reponse = $bdd->prepare('SELECT * FROM UTILISATEURS WHERE UTI_ID = :nom');
+			$reponse = $bdd->query('SELECT * FROM UTILISATEURS WHERE UTI_ID = :nom');
 			$reponse->execute(array(
 				'nom' => $_SESSION['login']
 			));
@@ -59,9 +59,21 @@
 
 			</p>
 
+			<h2>Autres utilisateurs</h2>
+
 			<?php
 
-			$reponse->closeCursor(); // Termine le traitement de la requête
+			$reponse->closeCursor();
+
+			$reponse = $bdd->query('SELECT UTI_ID FROM UTILISATEURS');
+
+			while($donnees = $reponse->fetch()){
+
+				echo $donnees[0], '<br />';
+
+			}
+
+			$reponse->closeCursor();
 
 		?>
 
