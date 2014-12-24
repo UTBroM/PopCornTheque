@@ -2,6 +2,10 @@
 
 	ini_set('display_errors', 'On');
 
+	session_start();
+	$_SESSION['login'] = '';
+	$_SESSION['password'] = '';
+
 	$user = $_POST['user'];
 	$password = sha1($_POST['password']);
 
@@ -24,6 +28,8 @@
 	if ($realpassword == $password){
 
 		echo "Bon mot de passe";
+		$_SESSION['login'] = $user;
+		$_SESSION['password'] = $password;
 
 	}
 	else{
