@@ -65,7 +65,8 @@
 
 			$reponse->closeCursor();
 
-			$reponse = $bdd->query('SELECT UTI_ID FROM UTILISATEURS');
+			$reponse = $bdd->prepare('SELECT UTI_ID FROM UTILISATEURS WHERE UTI_ID != ?');
+			$reponse->execute(array($_SESSION['login']));
 
 			while($donnees = $reponse->fetch()){
 
