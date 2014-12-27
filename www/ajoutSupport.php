@@ -5,7 +5,7 @@
 	$support_id = $_POST['support_id'];
 	$utilisateur_id = $_POST['utilisateur_id'];
 	$support_nom = $_POST['support_nom'];
-	$support_nbr = $_POST['support_nbr'];
+	$disponible = $_POST['disponible'];
 
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
@@ -14,12 +14,12 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO SUPPORT VALUES(NULL, :support_id, :utilisateur_id, :support_nom, :support_nbr)');
+	$req = $bdd->prepare('INSERT INTO SUPPORT VALUES(NULL, :support_id, :utilisateur_id, :support_nom, :disponible)');
 	$req->execute(array(
 		'support_id' => $support_id,
 		'utilisateur_id' => $utilisateur_id,
 		'support_nom' => $support_nom,
-		'support_nbr' => $support_nbr,
+		'disponible' => $disponible,
 	));
 
 ?>
