@@ -5,7 +5,7 @@
 	$user_id = $_POST['user_id'];
 	$commentaire = $_POST['commentaire'];
 	$note = $_POST['note'];
-	$date_actuelle = $_POST['date_actuelle'];
+	$date_actuelle = date(Y-M-D H:M:S);
 
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
