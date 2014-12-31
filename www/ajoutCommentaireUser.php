@@ -7,6 +7,8 @@
 	$note = $_POST['note'];
 	$date_actuelle = date(Y-m-d H:i:s);
 
+	echo $target_user_id, $current_user_id, $commentaire, $note, $date_actuelle;
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
