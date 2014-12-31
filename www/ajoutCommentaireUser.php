@@ -1,7 +1,6 @@
 <?php
 	
 	ini_set('display_errors', 'On');
-	$film_id = $_POST['film_id'];
 	$target_user_id = $_POST['target_user_id'];
 	$current_user_id = $_POST['current_user_id'];
 	$commentaire = $_POST['commentaire'];
@@ -15,9 +14,8 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_UT VALUES(NULL, :film_id, :target_user_id, :current_user_id, :commentaire, :note, :date_actuelle)');
+	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_UT VALUES(NULL, :target_user_id, :current_user_id, :commentaire, :note, :date_actuelle)');
 	$req = execute(array(
-		'film_id' => $film_id,
 		'target_user_id' => $target_user_id,
 		'current_user_id' => $current_user_id,
 		'commentaire' => $commentaire,
