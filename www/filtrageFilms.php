@@ -21,6 +21,7 @@
 	while($donnees = $req->fetch()){
 
 		echo '<br />', htmlspecialchars($donnees['FILM_TITRE']), '<br />';
+		echo '<img src="', $donnees['FILM_AFFICHE'], '"></br>';
 
 	}
 
