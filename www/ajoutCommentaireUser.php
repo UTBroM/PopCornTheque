@@ -22,7 +22,7 @@
 		'current_user_id' => $current_user_id,
 		'commentaire' => $commentaire,
 		'note' => $note,
-		'date_actuelle' => $date_actuelle,
+		'date_actuelle' => $date_actuelle
 	));
 
 ?>
