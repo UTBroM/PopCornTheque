@@ -11,7 +11,7 @@
 	$datetime1 = date_create($currt_date);
 	$datetime2 = date_create($retour_emprunt_date);
 	$interval = date_diff($datetime1, $datetime2);
-	$format_interval = $interval->format("Y-m-d H:i:s");
+	$emprunt_duree = $interval->format("Y-m-d H:i:s");
 
 	$rendu = FALSE;
 
