@@ -8,7 +8,7 @@
 	
 	$retour_emprunt_date = $_POST['retour_emprunt_date'];
 	$retour_emprunt_date_reel = NULL;
-	$emprunt_duree = $retour_emprunt_date - $date;
+	$emprunt_duree = $retour_emprunt_date -> diff($date);
 	$rendu = 'non';
 
 
