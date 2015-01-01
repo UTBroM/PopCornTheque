@@ -7,6 +7,8 @@
 	$support_nom = $_POST['support_nom'];
 	$disponible = $_POST['disponible'];
 
+	echo "Support ajouté";
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
