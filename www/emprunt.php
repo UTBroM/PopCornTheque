@@ -7,8 +7,12 @@
 	$currt_date = date("Y-m-d H:i:s");
 	
 	$retour_emprunt_date = $_POST['retour_emprunt_date'];
-	$retour_emprunt_date_reel = NULL;
-	$emprunt_duree = $retour_emprunt_date -> diff($date);
+
+	$datetime1 = date_create($currt_date);
+	$datetime2 = date_create($retour_emprunt_date);
+	$interval = date_diff($datetime1, $datetime2);
+	$format_interval = $interval->format("Y-m-d H:i:s");
+
 	$rendu = 'non';
 
 
