@@ -17,7 +17,7 @@
 	}
 
 	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_UT VALUES(NULL, :target_user_id, :current_user_id, :commentaire, :note, :date_actuelle)');
-	$req = execute(array(
+	$req->execute(array(
 		'target_user_id' => $target_user_id,
 		'current_user_id' => $current_user_id,
 		'commentaire' => $commentaire,
