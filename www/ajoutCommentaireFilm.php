@@ -7,6 +7,8 @@
 	$note = $_POST['note'];
 	$date_actuelle = date("Y-m-d H:i:s");
 
+	echo "Sauvegarde du commentaire terminé";
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
