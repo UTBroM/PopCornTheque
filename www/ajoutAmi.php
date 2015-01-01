@@ -4,6 +4,8 @@
 	$target_user_id = $_POST['target_user_id'];
 	$current_user_id = $_POST['current_user_id'];
 
+	echo "Demande d'ami(e) effectuée";
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
