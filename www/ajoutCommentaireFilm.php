@@ -15,7 +15,7 @@
 	}
 
 	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_FILM VALUES(NULL, :film_id, :user_id, :commentaire, :note, :date_actuelle)');
-	$req = execute(array(
+	$req->execute(array(
 		'film_id' => $film_id,
 		'user_id' => $user_id,
 		'commentaire' => $commentaire,

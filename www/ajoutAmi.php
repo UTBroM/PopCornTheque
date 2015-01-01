@@ -12,7 +12,7 @@
 	}
 
 	$req = $bdd->prepare('INSERT INTO ETRE_AMI VALUES(:target_user_id, :current_user_id)');
-	$req = execute(array(
+	$req->execute(array(
 		'target_user_id' => $target_user_id,
 		'current_user_id' => $current_user_id,
 	));
