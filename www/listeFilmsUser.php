@@ -17,7 +17,7 @@
 	$req->execute(array($utilisateur_id));
 
 
-	echo " Nom d'utilisateur 	Id du film 		Nom du support"
+	echo " Nom d'utilisateur 	Id du film 		Nom du support";
 	while($donnees = $req->fetch()){
 		echo '</br>', htmlspecialchars($donnees['UTI_ID']),' ' ,htmlspecialchars($donnees['S.FILM_ID']),' ',htmlspecialchars($donnees['SUP_NOM']), '</br>';
 		echo '<img src="', $donnees['FILM_AFFICHE'], '</br>';
