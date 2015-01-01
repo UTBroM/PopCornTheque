@@ -7,8 +7,6 @@
 	$note = $_POST['note'];
 	$date_actuelle = date("Y-m-d H:i:s");
 
-	echo "Sauvegarde du commentaire terminé";
-
 	echo "Commentaire ajouté";
 
 	try{
