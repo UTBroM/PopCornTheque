@@ -9,6 +9,8 @@
 
 	echo "Sauvegarde du commentaire terminé";
 
+	echo "Commentaire ajouté";
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
