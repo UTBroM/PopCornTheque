@@ -16,10 +16,10 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_UT VALUES(NULL, :target_user_id, :current_user_id, :commentaire, :note, :date_actuelle)');
+	$req = $bdd->prepare('INSERT INTO COMMENTAIRES_UT VALUES(NULL, :current_user_id, :target_user_id, :commentaire, :note, :date_actuelle)');
 	$req->execute(array(
-		'target_user_id' => $target_user_id,
 		'current_user_id' => $current_user_id,
+		'target_user_id' => $target_user_id,
 		'commentaire' => $commentaire,
 		'note' => $note,
 		'date_actuelle' => $date_actuelle
