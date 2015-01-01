@@ -4,14 +4,9 @@
 
 	$current_id_user = $_POST['current_id_user'];
 	$current_id_support = $_POST['current_id_support'];
-	$currt_date = date("Y-m-d H:i:s");
-	
+	$currt_date = date("Y-m-d");
 	$retour_emprunt_date = $_POST['retour_emprunt_date'];
 
-	$datetime1 = date_create($currt_date);
-	$datetime2 = date_create($retour_emprunt_date);
-	$interval = date_diff($datetime1, $datetime2);
-	$emprunt_duree = $interval->format("Y-m-d H:i:s");
 
 	$rendu = FALSE;
 
@@ -23,13 +18,12 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :emprunt_duree, :rendu');
+	$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :rendu)');
 	$req->execute(array(
 		'current_id_user' => $current_id_user,
 		'current_id_support' => $current_id_support,
 		'currt_date' => $currt_date,
 		'retour_emprunt_date' => $retour_emprunt_date,
-		'emprunt_duree' => $emprunt_duree,
 		'rendu' => $rendu
 	));
 
