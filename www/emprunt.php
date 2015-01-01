@@ -13,7 +13,7 @@
 	$interval = date_diff($datetime1, $datetime2);
 	$format_interval = $interval->format("Y-m-d H:i:s");
 
-	$rendu = 'non';
+	$rendu = FALSE;
 
 
 	try{
@@ -23,15 +23,14 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('UPDATE EMPRUNT SET EMPR_ID = NULL, UTI_ID = :current_id_user , SUP_ID = :current_id_support, EMPR_DATE = :currt_date, EMPR_RETOUR_THEORIQUE = :retour_emprunt_date, EMPR_RETOUR_REEL = :retour_emprunt_date_reel, EMPR_DUREE = :emprunt_duree, EMPR_RENDU = :rendu');
+	$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :emprunt_duree, :rendu');
 	$req->execute(array(
 		'current_id_user' => $current_id_user,
 		'current_id_support' => $current_id_support,
 		'currt_date' => $currt_date,
 		'retour_emprunt_date' => $retour_emprunt_date,
-		'retour_emprunt_date_reel' => $retour_emprunt_date_reel,
 		'emprunt_duree' => $emprunt_duree,
-		'rendu' => $rendu,
+		'rendu' => $rendu
 	));
 
 	$req2 = $bdd->prepare('DELETE FROM DEMANDE_EMPRUNT WHERE SUP_ID = :current_id_support AND UTI_ID = :current_id_user');
