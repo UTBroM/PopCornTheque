@@ -4,7 +4,7 @@
 
 	$current_id_user = $_POST['current_id_user'];
 	$current_id_support = $_POST['current_id_support'];
-	$currt_date = date("Y-M-D H:M:S");
+	$currt_date = date("Y-m-d H:i:s");
 	
 	$retour_emprunt_date = $_POST['retour_emprunt_date'];
 	$retour_emprunt_date_reel = NULL;
