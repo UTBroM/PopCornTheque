@@ -5,6 +5,8 @@
 	$utilisateur_id = $_POST['utilisateur_id'];
 	$support_id = $_POST['support_id'];
 
+	echo "Demande d'emprunt effectuée";
+
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
