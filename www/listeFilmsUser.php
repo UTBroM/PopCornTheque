@@ -13,7 +13,7 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('SELECT S.FILM_ID, F.FILM_ID, UTI_ID, SUP_NOM, FILM_AFFICHE FROM SUPPORT = S, FILM = F WHERE UTI_ID = ? AND  S.FILM_ID = F.FILM_ID');
+	$req = $bdd->prepare('SELECT S.FILM_ID, F.FILM_ID, UTI_ID, SUP_NOM, FILM_AFFICHE FROM SUPPORT as S INNER JOIN FILM as F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?');
 	$req->execute(array($utilisateur_id));
 
 
