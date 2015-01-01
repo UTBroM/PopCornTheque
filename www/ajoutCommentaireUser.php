@@ -5,7 +5,7 @@
 	$current_user_id = $_POST['current_user_id'];
 	$commentaire = $_POST['commentaire'];
 	$note = $_POST['note'];
-	$date_actuelle = date(Y-m-d H:i:s);
+	$date_actuelle = date("Y-m-d H:i:s");
 
 	echo $target_user_id, $current_user_id, $commentaire, $note, $date_actuelle;
 
