@@ -105,13 +105,13 @@ li img
 	
 
 }
-.tableau-film-image{
+.tableau-film img{
 
-	margin: 50px;
+	height: 8em;
 
 }
 .menu{
 	float: left;
 	padding-right: 50px;	
-}	
+}
 

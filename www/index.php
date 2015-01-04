@@ -38,23 +38,18 @@
 		<ul>
 			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
 		</ul>
+			
+		<ul class="tableau-film"
+			<li>
+				<h3>Tron</h3>
+				<img class="tableau-film-image" src="images/tron.png">
+			</li>
+			<li>
+				<h3>Hobbit</h3>
+				<img class="tableau-film-image" src="images/hobbit.png">
+			</li>
+		</ul>
 
-		<div class="tableau-film">				
-			<ul>
-				<li>
-					<div>
-						<h1>Tron</h1>
-						<img class="tableau-film-image" src="images/tron.png">
-					</div>
-				</li>
-				<li>
-					<div>
-						<h1>Hobbit</h1>
-						<img class="tableau-film-image" src="images/hobbit.png">
-					<div>
-				</li>
-			</ul>
-		</article>
 
         <a href="ajoutSupport.html" title="Ajouter Support"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un Support"></div></a>
     
