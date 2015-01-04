@@ -12,13 +12,21 @@
     	</header>
     	<nav>
     		<ul>
+		<?php
+			session_start();
+			if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
+			{
+			// la variable 'login' de session est non déclaré ou vide
+			echo '  <p><a href="connexion.html" title="Connexion">Connexion</a></p>';
+			exit();
+			}
+		?>
                 <li><a href="rechercheFilm.html">Ajouter film</a></li>
     			<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
     			<li><a href="ajoutCommentaireFilm.html">Ajouter un commentaire sur un film</a></li>
     			<li><a href="ajoutCommentaireUser.html">Ajouter un commentaire sur un user</a></li>
     			<li><a href="demandeEmprunt.html">Faire une demande d'emprunt</a></li>
     			<li><a href="emprunt.html">Emprunter</a></li>
-    			<li><a href="connexion.html">Connexion</a></li>
     			<li><a href="formulaireinscription.html">Inscription</a></li>
                 <li><a href="listeFilmsUser.html">Liste des Films par user</a></li>
 			<li><a href="filtrageFilms.html">Filtrage</a></li>
@@ -28,7 +36,6 @@
 
 		<ul>
 			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
-			<li class="menu"><img src="images/series.png" name="Logo series">Séries</li>
 		</ul>
 
 		<div class="tableau-film">				
