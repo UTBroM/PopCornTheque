@@ -57,10 +57,10 @@
 
 		while($donnees = $req->fetch()){
 
-			echo "<li>\n";
+			echo '<a href="detailsFilm.php?idfilm=',$donnees['FILM_ID'],'"><li>';
 			echo '<h5>',htmlspecialchars($donnees['FILM_TITRE']),"</h5>\n";
 			echo '<img src="', $donnees['FILM_AFFICHE'], '">';
-			echo "\n</li>";
+			echo "\n</li></a>";
 
 		}
 
