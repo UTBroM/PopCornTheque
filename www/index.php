@@ -58,7 +58,7 @@
 		while($donnees = $req->fetch()){
 
 			echo "<li>\n";
-			echo '<h3>',htmlspecialchars($donnees['FILM_TITRE']),"</h3>\n";
+			echo '<h5>',htmlspecialchars($donnees['FILM_TITRE']),"</h5>\n";
 			echo '<img src="', $donnees['FILM_AFFICHE'], '">';
 			echo "\n</li>";
 
