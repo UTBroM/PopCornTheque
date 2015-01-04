@@ -12,8 +12,7 @@
 			ini_set('display_errors', 'On');
 
 			session_start();
-			$_SESSION['login'] = '';
-			$_SESSION['password'] = '';
+			$_SESSION = array();
 
 			$user = $_POST['user'];
 			$password = sha1($_POST['password']);
