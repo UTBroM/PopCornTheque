@@ -13,15 +13,15 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?');
+	$req = $bdd->prepare('SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?');
 	$req->execute(array($utilisateur_id));
 
 	echo "<table>\n<caption>Liste des support de ", htmlspecialchars($utilisateur_id),"</caption>\n";
-	echo "<thead>\n<tr>\n<th>Id du film\n<th>Nom du support\n";
+	echo "<thead>\n<tr>\n<th>Id du film\n<th>Titre\n<th>Nom du support\n<th>\n";
 	echo "<tbody>\n";
 	while($donnees = $req->fetch()){
-		echo "<tr>\n<td>",$donnees['FILM_ID'],'<td>',htmlspecialchars($donnees['SUP_NOM']);
-		echo '<img src="', $donnees['FILM_AFFICHE'], '"></br>';
+		echo "<tr>\n<td>",$donnees['FILM_ID'],"\n<td>",$donnees['FILM_TITRE'],"\n<td>",htmlspecialchars($donnees['SUP_NOM']),"\n";
+		echo '<td><img src="', $donnees['FILM_AFFICHE'], '" width=40% height=40%>';
 	}
 	echo"</table>";
 
