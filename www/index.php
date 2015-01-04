@@ -8,7 +8,10 @@
 
     <body>
     	<header>
-            <a href="index.html"></a><img src="images/logoPopCornTheque.png" height="60px">
+            <a href="index.php">
+            	<img src="images/logoPopCornTheque.png" height="130px">
+            	<img src="images/ecritLogoPopCornTheque.png">
+            </a>
     	</header>
     	<nav>
     		<ul>
