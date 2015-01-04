@@ -17,7 +17,8 @@
 			if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
 			{
 			// la variable 'login' de session est non déclaré ou vide
-			echo '  <p><a href="connexion.html" title="Connexion">Connexion</a></p>';
+			echo '<li><a href="connexion.html" title="Connexion">Connexion</a></li>';
+			echo '<li><a href="formulaireinscription.html">Inscription</a></li></nav>';
 			exit();
 			}
 		?>
@@ -27,7 +28,6 @@
     			<li><a href="ajoutCommentaireUser.html">Ajouter un commentaire sur un user</a></li>
     			<li><a href="demandeEmprunt.html">Faire une demande d'emprunt</a></li>
     			<li><a href="emprunt.html">Emprunter</a></li>
-    			<li><a href="formulaireinscription.html">Inscription</a></li>
                 <li><a href="listeFilmsUser.html">Liste des Films par user</a></li>
 			<li><a href="filtrageFilms.html">Filtrage</a></li>
     		</ul>
