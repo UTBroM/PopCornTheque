@@ -30,7 +30,7 @@
     			<li><a href="emprunt.html">Emprunter</a></li>
                 <li><a href="listeFilmsUser.html">Liste des Films par user</a></li>
 			<li><a href="filtrageFilms.html">Filtrage</a></li>
-			<li><a href="deconnexion.html">Deconnexion</a></li>
+			<li><a href="deconnexion.php">Deconnexion</a></li>
     		</ul>
     	</nav>
 		<h1>Bienvenue sur PopcornTeque</h1>
