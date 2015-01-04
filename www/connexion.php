@@ -36,7 +36,7 @@
 
 			if ($realpassword == $password){
 
-				echo '<p>Bon mot de passe</p><p><a href="monespace.php">Accédez à l\'espace ultra sécurisé des membres</a></p>';
+				echo "<p>Connexion réussie</p><p><a href=","index.php",">Revenir à la page d'accueil</a></p>";
 				$_SESSION['login'] = $user;
 				$_SESSION['password'] = $password;
 
