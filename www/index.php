@@ -39,7 +39,7 @@
 			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
 		</ul>
 			
-		<ul class="tableau-film"
+		<ul class="tableau-film">
 			<li>
 				<h3>Tron</h3>
 				<img class="tableau-film-image" src="images/tron.png">
