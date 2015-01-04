@@ -38,17 +38,35 @@
 		<ul>
 			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
 		</ul>
-			
-		<ul class="tableau-film">
-			<li>
-				<h3>Tron</h3>
-				<img class="tableau-film-image" src="images/tron.png">
-			</li>
-			<li>
-				<h3>Hobbit</h3>
-				<img class="tableau-film-image" src="images/hobbit.png">
-			</li>
-		</ul>
+
+	<ul class="tableau-film">
+	
+	<?php
+
+		try
+		{
+			$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
+		}
+		catch (Exception $e)
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+
+		$req = $bdd->prepare("SELECT *  FROM FILM");
+		$req->execute(array($film));
+
+		while($donnees = $req->fetch()){
+
+			echo '<li>\n';
+			echo '<h3>',htmlspecialchars($donnees['FILM_TITRE']),'</h3>\n';
+			echo '<img src="', $donnees['FILM_AFFICHE'], '">\n';
+			echo '</li>';
+
+		}
+
+	?>
+
+	</ul>
 
 
         <a href="ajoutSupport.html" title="Ajouter Support"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un Support"></div></a>
