@@ -21,7 +21,7 @@
 		}
 
 		$target_user_id = $_POST['target_user_id'];
-		$current_user_id = $_POST['current_user_id'];
+		$current_user_id = $_SESSION['login'];
 
 		echo "Demande d'ami(e) effectuée";
 
