@@ -71,7 +71,7 @@
 	</ul>
 
 
-        <a href="ajoutSupport.html" title="Ajouter Support"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un Support"></div></a>
+        <a href="rechercheFilm.html" title="Ajouter film possédé"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un film possédé"></div></a>
     
     </body>
 </html>
