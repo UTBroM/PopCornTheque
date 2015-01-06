@@ -5,7 +5,6 @@
 	$support_id = $_POST['film_id'];
 	$utilisateur_id = $_POST['utilisateur_id'];
 	$support_nom = $_POST['support_nom'];
-	$disponible = $_POST['disponible'];
 
 	echo "Support ajouté";
 
@@ -16,12 +15,11 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO SUPPORT VALUES(NULL, :film_id, :utilisateur_id, :support_nom, :disponible)');
+	$req = $bdd->prepare('INSERT INTO SUPPORT VALUES(NULL, :film_id, :utilisateur_id, :support_nom, 1)');
 	$req->execute(array(
 		'film_id' => $film_id,
 		'utilisateur_id' => $utilisateur_id,
 		'support_nom' => $support_nom,
-		'disponible' => $disponible,
 	));
 
 ?>
