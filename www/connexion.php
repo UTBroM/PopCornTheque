@@ -38,6 +38,7 @@
 				echo "<p>Connexion réussie</p><p><a href=","index.php",">Revenir à la page d'accueil</a></p>";
 				$_SESSION['login'] = $user;
 				$_SESSION['password'] = $password;
+		header('Location: index.php');
 
 			}
 			else{
