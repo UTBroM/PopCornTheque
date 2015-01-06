@@ -34,6 +34,7 @@
 		}
 		echo"</table>";
 
+		$req->closeCursor();
 	?>
 	</body>
 </html>
