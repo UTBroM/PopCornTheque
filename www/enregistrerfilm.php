@@ -22,7 +22,14 @@
 
 		<form action="ajoutSupport.php" method="post">
 
-			Nom du support : <input type="text" name="support_nom"></br>
+			Nom du support : <select name="support_nom">
+									<option value="DVD">DVD</option>
+									<option value="Blu-Ray">Blu-Ray</option>
+									<option value="VHS">VHS</option>
+									<option value="Support Virtuel">Support Virtuel</option>
+									<option value="Bobine">Bobine</option>
+									<option value="Autre">Autre ...</option>
+								</select><br/>
 
 		<?php
 
