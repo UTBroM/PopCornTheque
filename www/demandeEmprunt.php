@@ -8,10 +8,12 @@
 	
 	<body>
 	<?php
-		
+
+		include 'header.php';
+
 		ini_set('display_errors', 'On');
 
-		$utilisateur_id = $_GET['uti_id'];
+		$utilisateur_id = $_SESSION['login'];
 		$support_id = $_GET['sup_id'];
 
 		echo "Demande d'emprunt effectuée";
