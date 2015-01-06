@@ -48,7 +48,7 @@
 		echo '<h2>Commentaires :</h2><ul>';
 		while($donnees = $req3->fetch()){
 
-			echo '<li><h3>', htmlspecialchars($donnees['UTI_ID']), '</h3></li>';
+			echo '<li><h3>', htmlspecialchars($donnees['UTI_ID']), '</h3> - ', $donnees['COMF_DATE'], '</li>';
 			echo '<li>', htmlspecialchars($donnees['COMF_CONTENU']), '</li>';
 
 		}
