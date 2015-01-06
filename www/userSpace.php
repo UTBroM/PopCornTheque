@@ -43,6 +43,7 @@
 			$dateMySQL = $donnees2['UTI_DATE_NAISSANCE'];
 			$datenaissance = date("d/m/Y", strtotime($dateMySQL));
 
+			$req->closeCursor();
 		?>
 		<section>
 			<p>
@@ -62,12 +63,15 @@
 			<p>
 				<h2>Mes demande d'amis<br/></h2>
 				<?php 
+					$req2->closeCursor();
+
 					$req3 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_SOURCE = ? ");
 					$req3->execute(array($user));
 
 					while($donnees3 = $req3->fetch()){
 						echo htmlspecialchars($donnees3['UTI_ID_CIBLE']), "<br/>";
 					}
+					$req3->closeCursor();
 					
 				?>
 				<h2>Mes invitations</h2>
@@ -78,6 +82,7 @@
 					while($donnees4 = $req4->fetch()){
 						echo htmlspecialchars($donnees4['UTI_ID_SOURCE']), "<br/>";
 					}
+					$req4->closeCursor();
 				?>
 			</p>
 		</section>
@@ -92,6 +97,7 @@
 					while($donnees5 = $req5->fetch()){
 						echo htmlspecialchars($donnees5['SUP_ID']), "à rendre le ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "<br/>";
 					}
+					$req5->closeCursor();
 				?>
 			</p>
 		</section>
@@ -109,12 +115,12 @@
 					$req6->execute(array($user));
 					echo "Vous avez demandé :<br/>";
 					while($donnees6 = $req6->fetch()){
-						echo '<a href="http://popcorntheque.ddns.net/detailsFilm.php?idfilm=', htmlspecialchars($donnees6['F.FILM_ID'], '">', htmlspecialchars($donnees6['F.FILM_TITRE']), '</a><br/>';
+						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']);
 					}
+					$req6->closeCursor();
 				?>
-
 			</p>
 		</section>
-
 	</body>
 </html>
+""</a>
