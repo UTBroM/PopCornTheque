@@ -112,6 +112,7 @@
 													INNER JOIN FILM AS F 
 														ON S.FILM_ID = F.FILM_ID  
 													WHERE DE.UTI_ID = ? ");
+					
 					$req6->execute(array($user));
 					echo "Vous avez demandé :<br/>";
 					while($donnees6 = $req6->fetch()){
