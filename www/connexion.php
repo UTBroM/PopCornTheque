@@ -36,4 +36,5 @@
 		echo '<p>Mauvais mot de passe</p>';
 		include 'connexion.html';
 	}
+	$req->closeCursor();
 ?>
