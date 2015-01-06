@@ -107,25 +107,31 @@
 
 				}
 
-				$directeur = explode(" ",$details->Director);
-				$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
-				$req->execute(array(
-					'nom' => $directeur[1],
-					'prenom' => $directeur[0]
-				));
+				$listerealisateurs = explode(", ", $details->Director);
 
-				$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
-				$req->execute(array(
-					'nom' => $directeur[1],
-					'prenom' => $directeur[0]
-				));
-				$artid = $req->fetch()[0];
+				foreach($listerealisateurs as $realisateur){
 
-				$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
-				$req->execute(array(
-					'idfilm' => $filmid,
-					'idart' => $artid
-				));
+					$currealisateur = explode(" ",$realisateur);
+					$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+					$req->execute(array(
+						'nom' => $currealisateur[1],
+						'prenom' => $currealisateur[0]
+					));
+
+					$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
+					$req->execute(array(
+						'nom' => $currealisateur[1],
+						'prenom' => $currealisateur[0]
+					));
+					$artid = $req->fetch()[0];
+
+					$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
+					$req->execute(array(
+						'idfilm' => $filmid,
+						'idart' => $artid
+					));
+
+				}
 
 			}
 
