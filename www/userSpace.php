@@ -109,7 +109,7 @@
 					$req5->execute(array($user));
 					echo "Vous avez demandé :<br/>";
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['SUP_ID']), " : ", htmlspecialchars($donnees5['F.FILM_TITRE']), "<br/>";
+						echo '<a href="http://popcorntheque.ddns.net/detailsFilm.php?idfilm=',htmlspecialchars($donnees5['F.FILM_ID'], '">', htmlspecialchars($donnees5['F.FILM_TITRE']), '</a><br/>';
 					}
 				?>
 
