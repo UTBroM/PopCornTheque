@@ -11,8 +11,8 @@
 		
 		ini_set('display_errors', 'On');
 
-		$utilisateur_id = $_POST['utilisateur_id'];
-		$support_id = $_POST['support_id'];
+		$utilisateur_id = $_GET['uti_id'];
+		$support_id = $_GET['sup_id'];
 
 		echo "Demande d'emprunt effectuée";
 

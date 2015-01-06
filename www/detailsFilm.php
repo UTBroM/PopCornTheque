@@ -33,10 +33,10 @@
 		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ?');
 		$req2->execute(array($idfilm));
 
-		echo '<h2>Utilisateurs qui disposent de ce film :</h2><ul>';
+		echo "<h2>Utilisateurs qui disposent de ce film (cliquez pour faire une demande d'emprunt):</h2><ul>";
 		while($donnees = $req2->fetch()){
 
-			echo '<li>', htmlspecialchars($donnees['UTI_ID']), ' (', htmlspecialchars($donnees['SUP_NOM']), ')','</li>';
+			echo '<li><a href="demandeEmprunt?uti_id=', htmlspecialchars($donnees['UTI_ID']), '&sup_id=', $donnees['SUP_ID'], '">', htmlspecialchars($donnees['UTI_ID']), ' (', htmlspecialchars($donnees['SUP_NOM']), ')', '</a></li>';
 
 		}
 		echo '</ul>';
