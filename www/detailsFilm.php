@@ -42,7 +42,7 @@
 		echo '<h2>Utilisateurs qui disposent de se film :</h2><ul>';
 		while($donnees = $req2->fetch()){
 
-			echo '<li>', $donnees['UTI_ID'], '</li>';
+			echo '<li>', htmlspecialchars($donnees['UTI_ID']), '</li>';
 
 		}
 		echo '</ul>';
@@ -54,8 +54,8 @@
 		echo '<h2>Commentaires :</h2><ul>';
 		while($donnees = $req3->fetch()){
 
-			echo '<li><h3>', $donnees['UTI_ID'], '</h3></li>';
-			echo '<li>', $donnees['COMF_CONTENU'], '</li>';
+			echo '<li><h3>', htmlspecialchars($donnees['UTI_ID']), '</h3></li>';
+			echo '<li>', htmlspecialchars($donnees['COMF_CONTENU']), '</li>';
 
 		}
 		echo '</ul>';
