@@ -32,6 +32,13 @@
 
 			$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
 
+			if($Film->Type != "movie"){
+
+				//On stoppe si ce n'est pas un film
+				exit();
+
+			}
+
 			$sortie = date("Y-m-d",strtotime($details->Released));
 			$posterURL = $details->Poster;
 			$poster = NULL;
