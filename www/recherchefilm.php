@@ -13,7 +13,6 @@
 		<?php
 
 			ini_set('display_errors', 'On');
-			$t1=time();
 
 			$filmrecherche = urlencode($_POST['Film']);
 
@@ -39,11 +38,6 @@
 				}
 
 			}
-
-			$t2=time();
-
-			$t_lapsed=$t2-$t1;
-			echo "Temps d'execution = $t_lapsed";
 
 		?>
 
