@@ -1,8 +1,16 @@
 <?php
-	
+
+	session_start();
+	if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
+	{
+		// la variable 'login' de session est non déclaré ou vide
+		header('Location: index.php'); 
+		exit();
+	}
+
 	ini_set('display_errors', 'On');
 	$film_id = $_POST['film_id'];
-	$user_id = $_POST['user_id'];
+	$user_id = $_SESSION['login'];
 	$commentaire = $_POST['commentaire'];
 	$note = $_POST['note'];
 	$date_actuelle = date("Y-m-d H:i:s");
