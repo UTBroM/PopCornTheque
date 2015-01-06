@@ -43,9 +43,7 @@
 			else{
 
 				echo '<p>Mauvais mot de passe</p>';
-
 			}
-
 		?>
 	</body>
 </html>
