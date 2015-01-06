@@ -75,7 +75,7 @@
 					<input type="radio" name="note" value=7 id="case7" /><label for="case7">7</label>
 					<input type="radio" name="note" value=8 id="case8" /><label for="case8">8</label>
 					<input type="radio" name="note" value=9 id="case9" /><label for="case9">9</label>
-					<input type="radio" name="note" value=10 id="case10" /><label for="case10">10</label>
+					<input type="radio" name="note" value=10 id="case10" cheked /><label for="case10">10</label>
 				</br>
 				Commentaire : </br><textarea name="commentaire" rows="5" cols="40"></textarea></br>
 
