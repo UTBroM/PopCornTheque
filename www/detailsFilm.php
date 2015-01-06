@@ -64,18 +64,20 @@
 
 		<form action="ajoutCommentaireFilm.php" method="post">
 			<p>
-				ID du Film :<input type="hidden" name="film_id"  value=<?php echo $idfilm; ?>/></br>
-				Note : 	<input type="radio" name="note" value="0" id="case0" /><label for="case0">0</label>
-					<input type="radio" name="note" value=1 id="case1" /><label for="case1">1</label>
-					<input type="radio" name="note" value=2 id="case2" /><label for="case2">2</label>
-					<input type="radio" name="note" value=3 id="case3" /><label for="case3">3</label>
-					<input type="radio" name="note" value=4 id="case4" /><label for="case4">4</label>
-					<input type="radio" name="note" value=5 id="case5" /><label for="case5">5</label>
-					<input type="radio" name="note" value=6 id="case6" /><label for="case6">6</label>
-					<input type="radio" name="note" value=7 id="case7" /><label for="case7">7</label>
-					<input type="radio" name="note" value=8 id="case8" /><label for="case8">8</label>
-					<input type="radio" name="note" value=9 id="case9" /><label for="case9">9</label>
-					<input type="radio" name="note" value=10 id="case10" cheked /><label for="case10">10</label>
+
+				ID du Film :<input type="hidden" name="film_id"  value=<?php echo $idfilm; ?>></br>
+				Note : 	<input type="radio" name="note" value="0" id="case0" ><label for="case0">0</label>
+					<input type="radio" name="note" value=1 id="case1" ><label for="case1">1</label>
+					<input type="radio" name="note" value=2 id="case2" ><label for="case2">2</label>
+					<input type="radio" name="note" value=3 id="case3" ><label for="case3">3</label>
+					<input type="radio" name="note" value=4 id="case4" ><label for="case4">4</label>
+					<input type="radio" name="note" value=5 id="case5" ><label for="case5">5</label>
+					<input type="radio" name="note" value=6 id="case6" ><label for="case6">6</label>
+					<input type="radio" name="note" value=7 id="case7" ><label for="case7">7</label>
+					<input type="radio" name="note" value=8 id="case8" ><label for="case8">8</label>
+					<input type="radio" name="note" value=9 id="case9" ><label for="case9">9</label>
+					<input type="radio" name="note" value=10 id="case10" cheked><label for="case10">10</label>
+
 				</br>
 				Commentaire : </br><textarea name="commentaire" rows="5" cols="40"></textarea></br>
 
