@@ -7,6 +7,9 @@
 	</head>
 
 	<body>
+
+		<?php include 'header.php'; ?>
+
 		<p>Recherche du film : <?php echo htmlspecialchars($_POST['Film']); ?><br />Cliquez sur le film correspondant</p>
 		</br>
 
