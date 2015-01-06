@@ -10,7 +10,14 @@
 			<p>
 				ID du Film :<input type="text" name="film_id" required /></br>
 				ID Utilisateur : <input type="text" name="utilisateur_id" required /></br>
-				Nom du support : <input type="text" name="support_nom"></br>				
+				Nom du support : <select name="support_nom">
+									<option value="DVD">DVD</option>
+									<option value="Blu-Ray">Blu-Ray</option>
+									<option value="VHS">VHS</option>
+									<option value="Support Virtuel">Support Virtuel</option>
+									<option value="Bobine">Bobine</option>
+									<option value="Autre">Autre ...</option>
+								</select><br/>
 
 				<input type="submit" value="Valider">
 			</p>
