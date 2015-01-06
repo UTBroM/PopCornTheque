@@ -18,6 +18,13 @@
 
 			$object = json_decode(file_get_contents("http://www.omdbapi.com/?s=$filmrecherche"));
 
+			if(!$object->Response){
+
+				//On s'arrète si il n'y a pas de résultats
+				exit();
+
+			}
+
 			foreach($object->Search as $Film){
 
 				if($Film->Type == "movie"){
