@@ -104,7 +104,7 @@
 
 		<section>
 			<p>
-				<h2>Demande d'empreint envoyée<br/></h2>
+				<h2>Demande d'emprunt envoyée<br/></h2>
 				<?php 
 					$req6 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
@@ -125,7 +125,7 @@
 
 		<section>
 			<p>
-				<h2>Demande d'empreint reçue<br/></h2>
+				<h2>Demande d'emprunt reçue<br/></h2>
 				<?php 
 					$req7 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
@@ -135,7 +135,7 @@
 													WHERE S.UTI_ID = ? ");
 					
 					$req7->execute(array($user));
-					echo "Vous avez demandé :<br/>";
+					echo "On veut vous emprunter :<br/>";
 					while($donnees7 = $req7->fetch()){
 						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a><br/>';
 					}
