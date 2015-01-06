@@ -36,7 +36,7 @@
 		echo '<h2>Utilisateurs qui disposent de ce film :</h2><ul>';
 		while($donnees = $req2->fetch()){
 
-			echo '<li>', htmlspecialchars($donnees['UTI_ID']), '</li>';
+			echo '<li>', htmlspecialchars($donnees['UTI_ID']), ' (', htmlspecialchars($donnees['SUP_NOM']), '),'</li>';
 
 		}
 		echo '</ul>';
