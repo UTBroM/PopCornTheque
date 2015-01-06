@@ -23,6 +23,12 @@
 		$target_user_id = $_POST['target_user_id'];
 		$current_user_id = $_SESSION['login'];
 
+		if($target_user_id == $current_user_id){
+
+			exit();
+
+		}
+
 		echo "Demande d'ami(e) effectuée";
 
 		try{
