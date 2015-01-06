@@ -16,6 +16,16 @@
 			
 			ini_set('display_errors', 'On');
 
+			/*Test si l'utilisateur est connecté*/
+			session_start();
+			if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
+			{
+				// la variable 'login' de session est non déclaré ou vide
+				header('Location: index.php'); 
+				exit();
+			}
+
+
 			$current_id_user = $_POST['current_id_user'];
 			$current_id_support = $_POST['current_id_support'];
 			$currt_date = date("Y-m-d");
