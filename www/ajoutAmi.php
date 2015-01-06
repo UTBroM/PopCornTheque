@@ -25,7 +25,7 @@
 
 		if($target_user_id == $current_user_id){
 
-			exit();
+			header('Location: index.php');
 
 		}
 
