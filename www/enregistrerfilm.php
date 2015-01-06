@@ -68,13 +68,14 @@
 			}
 			else{
 
-				$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
+				$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age, :imdb)');
 				$req->execute(array(
 					'titre' => $details->Title,
 					'synopsis' => $details->Plot,
 					'sortie' => $sortie,
 					'affiche' => $poster,
-					'age' => $details->Rated
+					'age' => $details->Rated,
+					'imdb' => $idfilm
 				));
 
 				$filmid = $bdd->lastInsertId('FILM');
