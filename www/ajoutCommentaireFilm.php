@@ -15,8 +15,6 @@
 	$note = $_POST['note'];
 	$date_actuelle = date("Y-m-d H:i:s");
 
-	echo "Commentaire ajouté";
-
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
 	}
@@ -32,5 +30,7 @@
 		'note' => $note,
 		'date_actuelle' => $date_actuelle,
 	));
+
+	header("Location: ".$_SERVER['HTTP_REFERER']."");
 
 ?>
