@@ -15,7 +15,7 @@
 
 			$user = $_SESSION['login'];
 
-			echo htmlspecialchars($user);
+			echo "Profil de ",htmlspecialchars($user);
 
 			try
 			{
@@ -26,17 +26,35 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$req = $bdd->prepare("SELECT *  FROM FILM WHERE FILM_TITRE LIKE CONCAT('%', ?, '%')");
-			$req->execute(array($film));
+			$req = $bdd->prepare("SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?");
+			$req->execute(array($user));
 
+			echo "<br/><br/><table>\n<caption>Mes Films</caption>\n";
+			echo "<thead>\n<tr>\n<th>Id du film\n<th>Titre\n<th>Nom du support\n<th>\n";
+			echo "<tbody>\n";
 			while($donnees = $req->fetch()){
-
-				echo '<br />', htmlspecialchars($donnees['FILM_TITRE']), '<br />';
-				echo '<img src="', $donnees['FILM_AFFICHE'], '"></br>';
-
+				echo "<tr>\n<td>",$donnees['FILM_ID'],"\n<td>",$donnees['FILM_TITRE'],"\n<td>",htmlspecialchars($donnees['SUP_NOM']),"\n";
 			}
+			echo"</table>";
+
+			$req2 = $bdd->prepare("SELECT * FROM UTILISATEURS WHERE UTI_ID = ?");
+			$req2->execute(array($user));
+			$donnees2 = $req2->fetch();
+			$dateMySQL = $donnees2['UTI_DATE_NAISSANCE'];
+			$datenaissance = date("d/m/Y", strtotime($dateMySQL));
 
 		?>
+		<p>
+			<p>Mes infos<br/></p>
+			Nom d'utilisateur : <?php echo htmlspecialchars($donnees2['UTI_ID']); ?><br />
+			Nom : <?php echo htmlspecialchars($donnees2['UTI_NOM']); ?><br />
+			Prénom <?php echo htmlspecialchars($donnees2['UTI_PRENOM']); ?><br />
+			Date de naissance : <?php echo $datenaissance; ?><br />
+			Rue : <?php echo htmlspecialchars($donnees2['UTI_RUE']); ?><br />
+			Code postal : <?php echo $donnees2['UTI_CODE_POSTAL']; ?><br />
+			Ville : <?php echo htmlspecialchars($donnees2['UTI_VILLE']); ?><br />
+			eMail : <?php echo htmlspecialchars($donnees2['UTI_MAIL']); ?>
+		</p>
 
 	</body>
 </html>
