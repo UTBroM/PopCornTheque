@@ -100,16 +100,16 @@
 			<p>
 				<h2>Demande d'empreint<br/></h2>
 				<?php 
-					$req5 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
+					$req6 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
 														ON S.FILM_ID = F.FILM_ID  
 													WHERE DE.UTI_ID = ? ");
-					$req5->execute(array($user));
+					$req6->execute(array($user));
 					echo "Vous avez demandé :<br/>";
-					while($donnees5 = $req5->fetch()){
-						echo '<a href="http://popcorntheque.ddns.net/detailsFilm.php?idfilm=',htmlspecialchars($donnees5['F.FILM_ID'], '">', htmlspecialchars($donnees5['F.FILM_TITRE']), '</a><br/>';
+					while($donnees6 = $req6->fetch()){
+						echo '<a href="http://popcorntheque.ddns.net/detailsFilm.php?idfilm=', htmlspecialchars($donnees6['F.FILM_ID'], '">', htmlspecialchars($donnees6['F.FILM_TITRE']), '</a><br/>';
 					}
 				?>
 
