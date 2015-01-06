@@ -19,7 +19,7 @@
 		<li><a href="ajoutCommentaireUser.html">Ajouter un commentaire sur un user</a></li>
 		<li><a href="emprunt.html">Emprunter</a></li>
 		<li><a href="listeFilmsUser.html">Liste des Films par user</a></li>
-		<li><a href="userSpace.php">Liste des Films par user</a></li>
+		<li><a href="userSpace.php">Mon espace</a></li>
 		<li><a href="deconnexion.php">Deconnexion</a></li>
 	</ul>
 </nav>
