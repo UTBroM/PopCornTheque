@@ -15,6 +15,7 @@
 		exit();
 		}
 	?>
+		<li><a href="userSpace.php">Mon Espace</a></li>
 		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
 		<li><a href="ajoutCommentaireUser.html">Ajouter un commentaire sur un user</a></li>
 		<li><a href="emprunt.html">Emprunter</a></li>
