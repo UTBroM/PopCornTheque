@@ -2,7 +2,7 @@
 	
 	ini_set('display_errors', 'On');
 
-	$support_id = $_POST['film_id'];
+	$film_id = $_POST['film_id'];
 	$utilisateur_id = $_POST['utilisateur_id'];
 	$support_nom = $_POST['support_nom'];
 
