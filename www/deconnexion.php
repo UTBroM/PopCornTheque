@@ -13,7 +13,7 @@
 		$_SESSION = array();
 		session_destroy();
 
-		echo "<p>Deconnecté</p>";
+		header('Location: index.php');
 
 	?>
 </body>
