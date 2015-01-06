@@ -16,7 +16,6 @@
 		}
 	?>
 		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
-		<li><a href="ajoutCommentaireFilm.html">Ajouter un commentaire sur un film</a></li>
 		<li><a href="ajoutCommentaireUser.html">Ajouter un commentaire sur un user</a></li>
 		<li><a href="demandeEmprunt.html">Faire une demande d'emprunt</a></li>
 		<li><a href="emprunt.html">Emprunter</a></li>
