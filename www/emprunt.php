@@ -8,7 +8,7 @@
 	$retour_emprunt_date = $_POST['retour_emprunt_date'];
 
 
-	$rendu = FALSE;
+	$libre = FALSE;
 
 
 	try{
@@ -18,13 +18,13 @@
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :rendu)');
+	$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :libre)');
 	$req->execute(array(
 		'current_id_user' => $current_id_user,
 		'current_id_support' => $current_id_support,
 		'currt_date' => $currt_date,
 		'retour_emprunt_date' => $retour_emprunt_date,
-		'rendu' => $rendu
+		'libre' => $libre
 	));
 
 	$req2 = $bdd->prepare('DELETE FROM DEMANDE_EMPRUNT WHERE SUP_ID = :current_id_support AND UTI_ID = :current_id_user');
