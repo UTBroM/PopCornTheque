@@ -37,7 +37,7 @@
 			'target_user_id' => $target_user_id,
 			'current_user_id' => $current_user_id,
 		));
-
+		$req->closeCursor();
 	?>
 
 	</body>
