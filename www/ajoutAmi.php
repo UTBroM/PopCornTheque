@@ -12,13 +12,7 @@
 
 		ini_set('display_errors', 'On');
 
-		session_start();
-		if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
-		{
-			// la variable 'login' de session est non déclaré ou vide
-			header('Location: index.php'); 
-			exit();
-		}
+		include 'header.php';
 
 		$target_user_id = $_POST['target_user_id'];
 		$current_user_id = $_SESSION['login'];
