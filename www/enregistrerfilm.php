@@ -1,3 +1,15 @@
+<?php
+
+	session_start();
+	if ((!isset($_SESSION['login'])) || (empty($_SESSION['login'])))
+	{
+		// la variable 'login' de session est non déclaré ou vide
+		header('Location: index.php'); 
+		exit();
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,11 +19,14 @@
 	</head>
 
 	<body>
+
+		<form action="ajoutSupport.php" method="post">
+
+			Nom du support : <input type="text" name="support_nom"></br>
+
 		<?php
 
 			ini_set('display_errors', 'On');
-
-			echo "Film sauvegardé";
 
 			$idfilm = $_GET['detailsfilm'];
 
@@ -48,41 +63,64 @@
 			// Si le film existe déjà on ne fait rien
 			if($donnees['FILM_ID'] > 0){
 
-				exit();
+				$filmid = $donnees['FILM_ID'];
 
 			}
+			else{
 
-			$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
-			$req->execute(array(
-				'titre' => $details->Title,
-				'synopsis' => $details->Plot,
-				'sortie' => $sortie,
-				'affiche' => $poster,
-				'age' => $details->Rated
-			));
-
-			$filmid = $bdd->lastInsertId('FILM');
-
-			$listeacteurs = explode(", ", $details->Actors);
-
-			foreach($listeacteurs as $acteur){
-
-				$curacteur = explode(" ",$acteur);
-				$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+				$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
 				$req->execute(array(
-					'nom' => $curacteur[1],
-					'prenom' => $curacteur[0]
+					'titre' => $details->Title,
+					'synopsis' => $details->Plot,
+					'sortie' => $sortie,
+					'affiche' => $poster,
+					'age' => $details->Rated
 				));
 
+				$filmid = $bdd->lastInsertId('FILM');
+
+				$listeacteurs = explode(", ", $details->Actors);
+
+				foreach($listeacteurs as $acteur){
+
+					$curacteur = explode(" ",$acteur);
+					$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+					$req->execute(array(
+						'nom' => $curacteur[1],
+						'prenom' => $curacteur[0]
+					));
+
+
+					$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
+					$req->execute(array(
+						'nom' => $curacteur[1],
+						'prenom' => $curacteur[0]
+					));
+					$artid = $req->fetch()[0];
+
+					$req = $bdd->prepare('INSERT INTO AVOIR_JOUE_DANS VALUES(:idfilm, :idart)');
+					$req->execute(array(
+						'idfilm' => $filmid,
+						'idart' => $artid
+					));
+
+				}
+
+				$directeur = explode(" ",$details->Director);
+				$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
+				$req->execute(array(
+					'nom' => $directeur[1],
+					'prenom' => $directeur[0]
+				));
 
 				$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
 				$req->execute(array(
-					'nom' => $curacteur[1],
-					'prenom' => $curacteur[0]
+					'nom' => $directeur[1],
+					'prenom' => $directeur[0]
 				));
 				$artid = $req->fetch()[0];
 
-				$req = $bdd->prepare('INSERT INTO AVOIR_JOUE_DANS VALUES(:idfilm, :idart)');
+				$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
 				$req->execute(array(
 					'idfilm' => $filmid,
 					'idart' => $artid
@@ -90,27 +128,14 @@
 
 			}
 
-			$directeur = explode(" ",$details->Director);
-			$req = $bdd->prepare('INSERT INTO ARTISTE VALUES(NULL, :nom, :prenom)');
-			$req->execute(array(
-				'nom' => $directeur[1],
-				'prenom' => $directeur[0]
-			));
-
-			$req = $bdd->prepare('SELECT ART_ID FROM ARTISTE WHERE ART_NOM = :nom AND ART_PRENOM = :prenom');
-			$req->execute(array(
-				'nom' => $directeur[1],
-				'prenom' => $directeur[0]
-			));
-			$artid = $req->fetch()[0];
-
-			$req = $bdd->prepare('INSERT INTO REALISER VALUES(:idart, :idfilm)');
-			$req->execute(array(
-				'idfilm' => $filmid,
-				'idart' => $artid
-			));
+			echo'<input type="hidden" name="film_id" value="',$filmid,'">';
+			echo'<input type="hidden" name="utilisateur_id" value="',$_SESSION['login'],'">';
 
 		?>
+
+			<input type="submit" value="Valider">
+
+		</form>
 	</body>
 </html>
 
