@@ -55,8 +55,8 @@
 			}
 
 
-			$reponse = $bdd->prepare('SELECT * FROM FILM WHERE FILM_AFFICHE = ?');
-			$reponse->execute(array($poster));
+			$reponse = $bdd->prepare('SELECT * FROM FILM WHERE FILM_IMDB_ID = ?');
+			$reponse->execute(array($idfilm));
 
 			$donnees = $reponse->fetch();
 
