@@ -39,7 +39,7 @@
 		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ?');
 		$req2->execute(array($idfilm));
 
-		echo '<h2>Utilisateurs qui disposent de se film :</h2><ul>';
+		echo '<h2>Utilisateurs qui disposent de ce film :</h2><ul>';
 		while($donnees = $req2->fetch()){
 
 			echo '<li>', htmlspecialchars($donnees['UTI_ID']), '</li>';
