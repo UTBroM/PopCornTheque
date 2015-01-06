@@ -29,7 +29,7 @@
 			$req = $bdd->prepare("SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?");
 			$req->execute(array($user));
 
-			echo "<br/><br/><table>\n<caption>Mes Films</caption>\n";
+			echo "<br/><br/><table>\n<caption><h2>Mes Films</h2></caption>\n";
 			echo "<thead>\n<tr>\n<th>Id du film\n<th>Titre\n<th>Nom du support\n<th>\n";
 			echo "<tbody>\n";
 			while($donnees = $req->fetch()){
@@ -45,7 +45,7 @@
 
 		?>
 		<p>
-			<p>Mes infos<br/></p>
+			<h2>Mes infos<br/></h2>
 			Nom d'utilisateur : <?php echo htmlspecialchars($donnees2['UTI_ID']); ?><br />
 			Nom : <?php echo htmlspecialchars($donnees2['UTI_NOM']); ?><br />
 			Prénom <?php echo htmlspecialchars($donnees2['UTI_PRENOM']); ?><br />
