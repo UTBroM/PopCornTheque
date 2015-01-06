@@ -32,7 +32,7 @@
 
 			$details = json_decode(file_get_contents("http://www.omdbapi.com/?i=$idfilm&plot=full&r=json"));
 
-			if($Film->Type != "movie"){
+			if($details->Type != "movie"){
 
 				//On stoppe si ce n'est pas un film
 				exit();
