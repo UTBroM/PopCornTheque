@@ -39,6 +39,19 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
+
+			$reponse = $bdd->prepare('SELECT * FROM FILM WHERE FILM_AFFICHE = ?');
+			$reponse->execute(array($poster));
+
+			$donnees = $reponse->fetch();
+
+			// Si le film existe déjà on ne fait rien
+			if($donnees['FILM_ID'] > 0){
+
+				exit();
+
+			}
+
 			$req = $bdd->prepare('INSERT INTO FILM VALUES(NULL, :titre, :synopsis, :sortie, :affiche, NULL, :age)');
 			$req->execute(array(
 				'titre' => $details->Title,
