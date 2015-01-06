@@ -128,7 +128,7 @@
 
 			}
 
-			echo'<input type="hidden" name="film_id" value="',$filmid,'">';
+			echo'<input type="hidden" name="film_id" value=',$filmid,'>';
 			echo'<input type="hidden" name="utilisateur_id" value="',$_SESSION['login'],'">';
 
 		?>
