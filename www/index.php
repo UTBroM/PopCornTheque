@@ -15,7 +15,17 @@
 		<ul>
 			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
 		</ul>
-
+		
+		<section>
+			<form action="filtrageFilms.php" method="post">
+			<p>
+			    <img src="images/loupe.png">
+			    <input type="text" name="film" />
+			    <input type="submit" value="Rechercher" />
+			</p>
+			</form>
+		</section>
+		
 	<ul class="tableau-film">
 	
 	<?php
