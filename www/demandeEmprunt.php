@@ -31,7 +31,7 @@
 			'support_id' => $support_id,
 		));
 
-
+		$req->closeCursor();
 	?>
 
 	</body>

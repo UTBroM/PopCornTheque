@@ -47,7 +47,8 @@
 			));
 
 			header("Location: ".$_SERVER['HTTP_REFERER']."");
-
+			
+			$req->closeCursor();
 		?>
 	</body>
 </html>

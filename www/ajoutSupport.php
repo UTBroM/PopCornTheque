@@ -29,7 +29,7 @@
 			'utilisateur_id' => $utilisateur_id,
 			'support_nom' => $support_nom,
 		));
-
+		$req->closeCursor();
 	?>
 
 	</body>
