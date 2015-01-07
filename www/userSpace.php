@@ -95,7 +95,8 @@
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['SUP_ID']), "à rendre le ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "<br/>";
+						echo htmlspecialchars($donnees5['SUP_ID']), "à rendre le ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "     ";
+						echo '<a href="http://popcorntheque.ddns.net/rendre.php?emprunt_id=', htmlspecialchars($donnees5['EMPRUNT_ID']), '">Rendre</a><br/>';
 					}
 					$req5->closeCursor();
 				?>
