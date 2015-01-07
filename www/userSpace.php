@@ -144,7 +144,7 @@
 						<tr>
 						<th>Utilisateur
 						<th>Titre du film
-						<th>Support
+						<th>Créer l'emprunt
 					<tbody>
 
 					<?php
