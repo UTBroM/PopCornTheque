@@ -104,10 +104,17 @@
 		</section>
 
 		<section>
-			<p>
-				<h2>Demande d'emprunt envoyée<br/></h2>
+			<table border="1">
+				<caption><h2>Vous voulez emprunter :</h2></caption>
+				<thead>
+					<tr>
+					<th>Utilisateur
+					<th>Titre du film
+					<th>Annuler la demande
+				<tbody>
+
 				<?php 
-					$req6 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
+					$req6 = $bdd->prepare("SELECT S.SUP_ID, S.UTI_ID ,F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
@@ -117,11 +124,13 @@
 					$req6->execute(array($user));
 					echo "Vous avez demandé :<br/>";
 					while($donnees6 = $req6->fetch()){
-						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a><br/>';
+						echo '<tr><td>', $donnees6['UTI_ID'];
+						echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a>';
+						echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees6['UTI_ID']), '&sup_id=', htmlspecialchars($donnees6['SUP_ID']), '">Supprimer</a>';
 					}
 					$req6->closeCursor();
 				?>
-			</p>
+			</table>
 		</section>
 
 		<section>
