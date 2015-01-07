@@ -25,7 +25,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$req = $bdd->prepare('UPDATE EMPRUNT SET EMPR_RETOUR_REEL = :retour_emprunt_date, EMPR_RENDU = :libre WHERE EMPRUNT_ID = :emprunt_id');
+			$req = $bdd->prepare('UPDATE EMPRUNT SET EMPR_RETOUR_REEL = :retour_emprunt_date, EMPR_RENDU = :libre WHERE EMPR_ID = :emprunt_id');
 			$req->execute(array(
 				'emprunt_id' => $emprunt_id,
 				'retour_emprunt_date' => $retour_emprunt_date,
