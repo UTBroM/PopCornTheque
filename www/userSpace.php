@@ -126,7 +126,7 @@
 					while($donnees6 = $req6->fetch()){
 						echo '<tr><td>', $donnees6['UTI_ID'];
 						echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a>';
-						echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees6['UTI_ID']), '&sup_id=', htmlspecialchars($donnees6['SUP_ID']), '">Supprimer</a>';
+						echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($user), '&sup_id=', htmlspecialchars($donnees6['SUP_ID']), '">Supprimer</a>';
 					}
 					$req6->closeCursor();
 				?>
