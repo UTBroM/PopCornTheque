@@ -61,7 +61,7 @@
 		
 		<section>
 			<p>
-				<h2>Mes demande d'amis<br/></h2>
+				<h2>Mes amis<br/></h2>
 				<?php 
 					$req2->closeCursor();
 
@@ -74,7 +74,7 @@
 					$req3->closeCursor();
 					
 				?>
-				<h2>Mes invitations</h2>
+				<h2>Followers</h2>
 				<?php 
 					$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
 					$req4->execute(array($user));
@@ -127,7 +127,7 @@
 			<p>
 				<h2>Demande d'emprunt reçue<br/></h2>
 				<?php 
-					$req7 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
+					$req7 = $bdd->prepare("SELECT DE.UTI_ID, S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
@@ -137,7 +137,8 @@
 					$req7->execute(array($user));
 					echo "On veut vous emprunter :<br/>";
 					while($donnees7 = $req7->fetch()){
-						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a><br/>';
+						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
+						echo '<a href="http://popcorntheque.ddns.net/emprunt.php?current_id_user=', htmlspecialchars($donnees7['DE.UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['S.SUP_ID']), '>Valider</a><br/>';
 					}
 					$req7->closeCursor();
 				?>
@@ -145,3 +146,12 @@
 		</section>
 	</body>
 </html>
+
+<form action="filtrageFilms.php" method="post">
+			<p>
+			    <img src="images/loupe.png">
+			    <input type="text" name="film" />
+			    <input type="submit" value="Rechercher" />
+			</p>
+			</form>
+<a href="detailsFilm.php?idfilm='
