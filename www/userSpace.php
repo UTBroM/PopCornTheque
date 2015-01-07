@@ -127,8 +127,9 @@
 					<th>Titre du film
 					<th>Annuler la demande
 				<tbody>
+
 				<?php 
-					$req6 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
+					$req6 = $bdd->prepare("SELECT S.SUP_ID, S.UTI_ID ,F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
@@ -149,7 +150,6 @@
 
 		<section>
 			<p>
-				<h2>Demande d'emprunt reçue<br/></h2>
 				<?php 
 					$req7 = $bdd->prepare("SELECT DE.UTI_ID, S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
@@ -163,7 +163,7 @@
 				?>
 
 				<table border="1">
-					<caption>On veut vous emprunter :</caption>
+					<caption><h2>On veut vous emprunter :</h2></caption>
 					<thead>
 						<tr>
 						<th>Utilisateur
@@ -175,9 +175,9 @@
 					<?php
 						while($donnees7 = $req7->fetch()){
 							echo '<tr><td>', $donnees7['UTI_ID'];
-							echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
-							echo '<td><a href="formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a>';
-							echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees7['UTI_ID']), '&sup_id=', htmlspecialchars($donnees7['SUP_ID']), '">Supprimer</a>';
+							echo '<td><a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
+							echo '<td><a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a>';
+							echo '<td><a href="http://popcorntheque.ddns.net/supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees7['UTI_ID']), '&sup_id=', htmlspecialchars($donnees7['SUP_ID']), '">Supprimer</a>';
 						}
 						$req7->closeCursor();
 					?>
