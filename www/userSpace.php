@@ -126,7 +126,6 @@
 
 		<section>
 			<p>
-				<h2>Demande d'emprunt reçue<br/></h2>
 				<?php 
 					$req7 = $bdd->prepare("SELECT DE.UTI_ID, S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
@@ -140,7 +139,7 @@
 				?>
 
 				<table border="1">
-					<caption>On veut vous emprunter :</caption>
+					<caption><h2>On veut vous emprunter :</h2></caption>
 					<thead>
 						<tr>
 						<th>Utilisateur
