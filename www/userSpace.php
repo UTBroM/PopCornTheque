@@ -175,9 +175,9 @@
 					<?php
 						while($donnees7 = $req7->fetch()){
 							echo '<tr><td>', $donnees7['UTI_ID'];
-							echo '<td><a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
-							echo '<td><a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a>';
-							echo '<td><a href="http://popcorntheque.ddns.net/supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees7['UTI_ID']), '&sup_id=', htmlspecialchars($donnees7['SUP_ID']), '">Supprimer</a>';
+							echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
+							echo '<td><a href="formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a>';
+							echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($donnees7['UTI_ID']), '&sup_id=', htmlspecialchars($donnees7['SUP_ID']), '">Supprimer</a>';
 						}
 						$req7->closeCursor();
 					?>
