@@ -135,13 +135,29 @@
 													WHERE S.UTI_ID = ? ");
 					
 					$req7->execute(array($user));
-					echo "On veut vous emprunter :<br/>";
-					while($donnees7 = $req7->fetch()){
-						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>   ';
-						echo '<a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a><br/>';
-					}
-					$req7->closeCursor();
+
 				?>
+
+				<table>
+					<caption>On veut vous emprunter :</caption>
+					<thead>
+						<tr>
+						<th>Utilisateur
+						<th>Titre du film
+						<th>Support
+					<tbody>
+
+					<?php
+						while($donnees7 = $req7->fetch()){
+							echo '<tr><td>', $donnees7['UTI_ID'];
+							echo '<td><a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
+							echo '<td><a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['SUP_ID']), '">Valider</a>';
+						}
+						$req7->closeCursor();
+					?>
+
+				</table>
+
 			</p>
 		</section>
 	</body>
