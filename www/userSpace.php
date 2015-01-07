@@ -137,7 +137,6 @@
 													WHERE DE.UTI_ID = ? ");
 					
 					$req6->execute(array($user));
-					echo "Vous avez demandé :<br/>";
 					while($donnees6 = $req6->fetch()){
 						echo '<tr><td>', $donnees6['UTI_ID'];
 						echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a>';
