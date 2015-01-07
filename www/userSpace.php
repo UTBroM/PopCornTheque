@@ -96,7 +96,23 @@
 
 					while($donnees5 = $req5->fetch()){
 						echo htmlspecialchars($donnees5['SUP_ID']), "   à rendre le  ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "     ";
-						echo '<a href="http://popcorntheque.ddns.net/retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendre</a><br/>';
+						echo '<a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendre</a><br/>';
+					}
+					$req5->closeCursor();
+				?>
+			</p>
+		</section>
+
+		<section>
+			<p>
+				<h2>Mes prets<br/></h2>
+				<?php 
+					$req5 = $bdd->prepare("SELECT S.UTI_ID, E.EMPR_RETOUR_THEORIQUE FROM EMPRUNT AS E INNER JOIN SUPPORT AS S ON E.SUP_ID = S.SUP_ID INNER JOIN FILM AS F ON S.FILM_ID = F.FILM_ID WHERE S.UTI_ID = ? ");
+					$req5->execute(array($user));
+
+					while($donnees5 = $req5->fetch()){
+						echo htmlspecialchars($donnees5['SUP_ID']), "   à rendre le  ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "     ";
+						echo '<a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendre</a><br/>';
 					}
 					$req5->closeCursor();
 				?>
