@@ -29,7 +29,7 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 
-			$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, :libre)');
+			$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, NULL, :libre)');
 			$req->execute(array(
 				'current_id_user' => $current_id_user,
 				'current_id_support' => $current_id_support,
