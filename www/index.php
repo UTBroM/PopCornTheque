@@ -56,7 +56,7 @@
 	</ul>
 
 
-        <a href="rechercheFilm.html" title="Ajouter film possédé"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un film possédé"></div></a>
+        <a href="rechercheFilm.html" title="Ajouter film possédé" style="position: fixed; bottom: 0; right: 0;"><div id="badge-plus"><img src="images/plus.png" alt="Ajouter un film possédé"></div></a>
     
     </body>
 </html>
