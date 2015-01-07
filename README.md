@@ -16,4 +16,4 @@ Lors de l'imortation de la base :
 2. Contrainte d'unicité sur Nom et Prénom des ARTISTES
 3. Enjoy :)
  
-Un petit aperçu ici : [sene.ovh/PopCornTheque](http://sene.ovh/SI20) 
+Un petit aperçu ici : [sene.ovh/PopCornTheque](http://sene.ovh/popcorntheque) 
