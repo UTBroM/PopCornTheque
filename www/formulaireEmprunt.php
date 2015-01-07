@@ -13,8 +13,8 @@
 
 		<form action="emprunt.php" method="post">
 			<p>
-				ID de l'emprunteur : <input type="hidden" name="current_id_user" required value="<?php echo htmlspecialchars($current_id_user);?>"/></br>
-				ID du support à emprunter:<input type="hidden" name="current_id_support" required value="<?php echo htmlspecialchars($current_id_support);?>"/></br>
+				ID de l'emprunteur : <?php echo htmlspecialchars($current_id_user);?><input type="hidden" name="current_id_user" required value="<?php echo htmlspecialchars($current_id_user);?>"/></br>
+				<input type="hidden" name="current_id_support" required value="<?php echo htmlspecialchars($current_id_support);?>"/></br>
 				Date de retour:<input type="date" name="retour_emprunt_date" required /></br>
 				
 				<input type="submit" value="Valider">
