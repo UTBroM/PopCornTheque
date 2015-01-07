@@ -43,7 +43,7 @@
 				'user_id' => $user_id,
 				'commentaire' => $commentaire,
 				'note' => $note,
-				'date_actuelle' => $date_actuelle,
+				'date_actuelle' => $date_actuelle
 			));
 
 			header("Location: ".$_SERVER['HTTP_REFERER']."");
