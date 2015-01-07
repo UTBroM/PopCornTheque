@@ -111,8 +111,7 @@
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['FILM_TITRE']), "   a été emrpunté par  ", htmlspecialchars($donnees5['E.UTI_ID']), "et devra etre rendu le   ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "     ";
-						echo '<a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendre</a><br/>';
+						echo htmlspecialchars($donnees5['FILM_TITRE']), "   a été emrpunté par  ", htmlspecialchars($donnees5['UTI_ID']), "et devra etre rendu le   ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "<br/>";
 					}
 					$req5->closeCursor();
 				?>
@@ -120,17 +119,10 @@
 		</section>
 
 		<section>
-			<table border="1">
-				<caption><h2>Vous voulez emprunter :</h2></caption>
-				<thead>
-					<tr>
-					<th>Utilisateur
-					<th>Titre du film
-					<th>Annuler la demande
-				<tbody>
-
+			<p>
+				<h2>Demande d'emprunt envoyée<br/></h2>
 				<?php 
-					$req6 = $bdd->prepare("SELECT S.SUP_ID, S.UTI_ID ,F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
+					$req6 = $bdd->prepare("SELECT S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
@@ -140,17 +132,16 @@
 					$req6->execute(array($user));
 					echo "Vous avez demandé :<br/>";
 					while($donnees6 = $req6->fetch()){
-						echo '<tr><td>', $donnees6['UTI_ID'];
-						echo '<td><a href=', "detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a>';
-						echo '<td><a href="supprimerEmprunt.php?uti_id=', htmlspecialchars($user), '&sup_id=', htmlspecialchars($donnees6['SUP_ID']), '">Supprimer</a>';
+						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees6['FILM_ID']), '>', htmlspecialchars($donnees6['FILM_TITRE']), '</a><br/>';
 					}
 					$req6->closeCursor();
 				?>
-			</table>
+			</p>
 		</section>
 
 		<section>
 			<p>
+				<h2>Demande d'emprunt reçue<br/></h2>
 				<?php 
 					$req7 = $bdd->prepare("SELECT DE.UTI_ID, S.SUP_ID, F.FILM_ID, F.FILM_TITRE FROM DEMANDE_EMPRUNT AS DE 
 													INNER JOIN SUPPORT AS S 
@@ -164,7 +155,7 @@
 				?>
 
 				<table border="1">
-					<caption><h2>On veut vous emprunter :</h2></caption>
+					<caption>On veut vous emprunter :</caption>
 					<thead>
 						<tr>
 						<th>Utilisateur
