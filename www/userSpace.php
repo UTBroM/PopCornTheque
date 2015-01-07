@@ -91,7 +91,7 @@
 			<p>
 				<h2>Mes emprunts<br/></h2>
 				<?php 
-					$req5 = $bdd->prepare("SELECT SUP_ID, EMPR_RETOUR_THEORIQUE FROM EMPRUNT WHERE UTI_ID = ? AND EMPR_RENDU = FALSE");
+					$req5 = $bdd->prepare("SELECT SUP_ID, EMPR_RETOUR_THEORIQUE, EMPR_ID FROM EMPRUNT WHERE UTI_ID = ? AND EMPR_RENDU = FALSE");
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
