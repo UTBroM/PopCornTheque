@@ -146,12 +146,3 @@
 		</section>
 	</body>
 </html>
-
-<form action="filtrageFilms.php" method="post">
-			<p>
-			    <img src="images/loupe.png">
-			    <input type="text" name="film" />
-			    <input type="submit" value="Rechercher" />
-			</p>
-			</form>
-<a href="detailsFilm.php?idfilm='
