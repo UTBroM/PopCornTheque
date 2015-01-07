@@ -111,7 +111,7 @@
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['FILM_TITRE']), "   a été emrpunté par  ", htmlspecialchars($donnees5['UTI_ID']), "et devra etre rendu le   ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "<br/>";
+						echo htmlspecialchars($donnees5['FILM_TITRE']), "    a été emprunté par    ", htmlspecialchars($donnees5['UTI_ID']), "    et devra etre rendu le    ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "<br/>";
 					}
 					$req5->closeCursor();
 				?>
