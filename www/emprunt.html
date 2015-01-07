@@ -6,10 +6,16 @@
 		<title>PopCornTheque</title>
 	</head>
 	<body>
+		<?php 
+			$current_id_user = $_GET['current_id_user']
+			$current_id_support = $_GET['current_id_support']
+
+		?>
+
 		<form action="emprunt.php" method="post">
 			<p>
-				Votre ID utilisateur : <input type="text" name="current_id_user" required /></br>
-				ID du support à emprunter:<input type="text" name="current_id_support" required /></br>
+				ID de l'emprunteur : <input type="hidden" name="current_id_user" required value="<?php echo htmlspecialchars($current_id_user)?>"/></br>
+				ID du support à emprunter:<input type="hidden" name="current_id_support" required value="<?php echo htmlspecialchars($current_id_support)?>"/></br>
 				Date de retour:<input type="date" name="retour_emprunt_date" required /></br>
 				
 				<input type="submit" value="Valider">
