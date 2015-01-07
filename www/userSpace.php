@@ -138,7 +138,7 @@
 					echo "On veut vous emprunter :<br/>";
 					while($donnees7 = $req7->fetch()){
 						echo '<a href=', "http://popcorntheque.ddns.net/detailsFilm.php?idfilm=", htmlspecialchars($donnees7['FILM_ID']), '>', htmlspecialchars($donnees7['FILM_TITRE']), '</a>';
-						echo '<a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['DE.UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['S.SUP_ID']), '>Valider</a><br/>';
+						echo '<a href="http://popcorntheque.ddns.net/formulaireEmprunt.php?current_id_user=', htmlspecialchars($donnees7['DE.UTI_ID']), '&current_id_support=', htmlspecialchars($donnees7['S.SUP_ID']), '">Valider</a><br/>';
 					}
 					$req7->closeCursor();
 				?>
