@@ -139,7 +139,7 @@
 
 				?>
 
-				<table>
+				<table border="1">
 					<caption>On veut vous emprunter :</caption>
 					<thead>
 						<tr>
