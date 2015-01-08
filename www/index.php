@@ -15,7 +15,6 @@
 		<section class="recherche">
 			<form action="filtrageFilms.php" method="post">
 				<div>
-					<p>&#128269;</p>
 				    <input type="text" name="film" />
 				    <input type="submit" value="Rechercher" />
 				</div>
