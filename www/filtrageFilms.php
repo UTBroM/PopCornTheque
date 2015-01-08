@@ -27,7 +27,7 @@
 
 		while($donnees = $req->fetch()){
 
-			echo '<br />', htmlspecialchars($donnees['FILM_TITRE']), '<br />';
+			echo '<br /><a href"detailsFilm.php?idfilm=', htmlspecialchars($donnees['FILM_ID']), '">',htmlspecialchars($donnees['FILM_TITRE']), '</a><br />';
 			echo '<img src="', $donnees['FILM_AFFICHE'], '"></br>';
 
 		}
