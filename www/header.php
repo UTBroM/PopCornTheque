@@ -15,8 +15,10 @@
 		exit();
 		}
 	?>
+		<li><a href="index.php">Accueil</a></li>
 		<li><a href="userSpace.php">Mon Espace</a></li>
 		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
 		<li><a href="deconnexion.php">Deconnexion</a></li>
 	</ul>
+	<br/>
 </nav>
