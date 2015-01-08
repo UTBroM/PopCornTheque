@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" stroke="black" text-rendering="auto" stroke-linecap="square" stroke-miterlimit="10" stroke-opacity="1" shape-rendering="auto" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+  <!--Unicode Character 'HOUSE' (U+2302)-->
+  <defs id="genericDefs" />
+  <g>
+    <g>
+      <path d="M143.4375 378.9844 L14.625 378.9844 L14.625 289.9688 L79.1719 245.9531 L143.4375 289.9688 L143.4375 378.9844 ZM129.6562 365.2031 L129.6562 297.1406 L79.1719 262.5469 L28.5469 297.1406 L28.5469 365.2031 L129.6562 365.2031 Z" stroke="none" />
+    </g>
+  </g>
+</svg>

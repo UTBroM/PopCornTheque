@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" stroke="black" text-rendering="auto" stroke-linecap="square" stroke-miterlimit="10" stroke-opacity="1" shape-rendering="auto" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+  <!--Unicode Character 'HEAVY BLACK HEART' (U+2764)-->
+  <defs id="genericDefs" />
+  <g>
+    <g>
+      <path d="M131.0625 226.5469 Q145.8281 183.375 189.5625 183.375 Q215.4375 183.375 233.7188 196.5234 Q252 209.6719 252 228.9375 Q252 244.5469 244.1953 258.3281 Q236.3906 272.1094 213.4688 293.7656 Q186.6094 318.5156 176.7656 328.9219 Q166.9219 339.3281 155.8828 355.1484 Q144.8438 370.9688 141.4688 377.2969 Q138.5156 382.9219 136.2656 384.3984 Q134.0156 385.875 131.0625 385.875 Q128.1094 385.875 126.0703 384.75 Q124.0312 383.625 120.6562 377.2969 Q117.2812 370.9688 106.6641 355.7109 Q96.0469 340.4531 86.1328 329.9766 Q76.2188 319.5 48.6562 293.7656 Q28.5469 274.9219 19.3359 260.8594 Q10.125 246.7969 10.125 230.0625 Q10.125 209.1094 28.4062 196.2422 Q46.6875 183.375 72.2812 183.375 Q91.6875 183.375 106.8047 192.5859 Q121.9219 201.7969 131.0625 226.5469 Z" stroke="none" />
+    </g>
+  </g>
+</svg>
