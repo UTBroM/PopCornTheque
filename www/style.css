@@ -27,7 +27,7 @@ ul{
 }
 
 nav ul{
-	margin:0;
+	margin:1em;
 	padding:0;
 }
 nav ul li{
@@ -50,6 +50,7 @@ nav ul li a{
 	-moz-border-radius: 0.3em;
 	-o-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
+
 	font-family: 'Lato', sans-serif;
 }
 nav ul li.active a{
@@ -62,6 +63,8 @@ nav ul li.active a{
 	left:0px;
 }
 nav ul li a:hover, nav ul li.active a{
+	border-bottom: 2px solid #ff7e00;
+        padding-bottom: 2px;
 	color: #ff7e00;
 }
 nav ul li:nth-child(5) a{
@@ -138,11 +141,6 @@ li img
 
 }
 
-.menu:hover
-{
-	border-bottom: 2px solid #ff7e00;
-        padding-bottom: 2px;
-}
 .tableau-film{
 
 	margin-top: 70px;	
