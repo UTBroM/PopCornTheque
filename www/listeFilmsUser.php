@@ -19,7 +19,7 @@
 		$req = $bdd->prepare('SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?');
 		$req->execute(array($utilisateur_id));
 
-		echo "<table>\n<caption>Liste des support de ", htmlspecialchars($utilisateur_id),"</caption>\n";
+		echo "<table>\n<caption><h1>Liste des support de ", htmlspecialchars($utilisateur_id),"</h1></caption>\n";
 		echo "<thead>\n<tr>\n<th>Id du film\n<th>Titre\n<th>Nom du support\n<th>\n";
 		echo "<tbody>\n";
 		while($donnees = $req->fetch()){
