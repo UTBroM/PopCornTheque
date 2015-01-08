@@ -159,9 +159,7 @@ nav ul li:nth-child(5) a{
 .tableau-film img{
 
 	height: 15em;
-
-}
-.tableau-film img:hover {
+	box-shadow: 0.3em 0.3em 1em #000000;
 
 }
 .loupe{
