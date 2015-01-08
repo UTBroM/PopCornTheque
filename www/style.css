@@ -9,14 +9,14 @@ body
 }
 
 h1{
+	
 	text-align: center;
 	border-top: 2.5em;
 	padding: 0.47em 1em;
 }
 
-.loupe img{
-	width: 4em;
-	height: 4em;
+.loupe{
+	height: 2em;
 }
 
 ul{
@@ -27,7 +27,7 @@ ul{
 }
 
 nav ul{
-	margin:1em;
+	margin:0.7em;
 	padding:0;
 }
 nav ul li{
