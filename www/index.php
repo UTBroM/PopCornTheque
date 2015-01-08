@@ -12,7 +12,7 @@
 
 		<h1>Bienvenue sur PopcornTeque</h1>
 
-		<section>
+		<section class="recherche">
 			<form action="filtrageFilms.php" method="post">
 			<p>
 			    <img class="loupe" src="images/loupe.png">
