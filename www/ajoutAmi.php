@@ -32,7 +32,7 @@
 
 		}
 
-		echo "Demande d'ami(e) effectuée";
+		echo "Ami ajouté";
 
 		include 'connexionBDD.php';
 
