@@ -15,7 +15,7 @@
 
 			$user = $_SESSION['login'];
 
-			echo "<p>Profil de ",htmlspecialchars($user), "</p>";
+			echo '<h1>Profil de ',htmlspecialchars($user), "</h1>";
 
 			include 'connexionBDD.php';
 
