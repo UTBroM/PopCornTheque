@@ -2,7 +2,7 @@ html{
 	font-family: 'Lato', sans-serif;
 }
 body{
-	background-color: /*white*/#070707;
+	background-color: #2E2F2F;
 	color: white;
 }
 p{
@@ -24,6 +24,8 @@ a{
 	color: white;
 }
 nav{
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
 	padding: 0.3em;
 }
 nav ul{
@@ -63,9 +65,9 @@ nav ul li.active a{
 	left:0px;
 }
 nav ul li a:hover, nav ul li.active a{
-	border-bottom: 2px solid blue;
+	border-bottom: 2px solid #4099E6;
         padding-bottom: 2px;
-	color: blue;
+	color: #4099E6;
 }
 nav ul li:nth-child(5) a{
 	border-bottom:none;
@@ -92,7 +94,7 @@ li img
 	/*display: table;*/
 
 
-	background-color: DarkOrange;
+	background-color: #4099E6;
 	/*border: 2px solid white;
 	border-radius: 12px; /* one half of ( (border * 2) + height + padding )
 	box-shadow: 1px 1px 1px black;
@@ -171,8 +173,16 @@ li img
 .profil{
 	text-align: center;
 }
-.recherche{
-	right: 0em;
+.recherche ul{
+	margin:0.5em;
+	padding:0.5em;
+}
+.recherche li{
+	display: inline-block;
+	right: 0.5em;
 	top: 0em;
 	position: absolute;
+}
+.recherche img{
+	height: 1.5em;
 }
