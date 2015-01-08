@@ -20,5 +20,5 @@
 		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
 		<li><a href="deconnexion.php">Deconnexion</a></li>
 	</ul>
-	<br/>
+	
 </nav>
