@@ -15,7 +15,7 @@
 
 			$user = $_SESSION['login'];
 
-			echo "Profil de ",htmlspecialchars($user);
+			echo "<p>Profil de ",htmlspecialchars($user), "</p>";
 
 			try
 			{
