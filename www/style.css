@@ -2,8 +2,8 @@ html{
 	font-family: 'Lato', sans-serif;
 }
 body{
-	background-color: white/*#070707*/;
-	color: black;
+	background-color: /*white*/#070707;
+	color: white;
 }
 p{
 	border-top: 1em;
