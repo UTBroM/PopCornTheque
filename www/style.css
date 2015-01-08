@@ -41,7 +41,6 @@ nav ul{
 }
 nav ul li{
 	display:inline-block;
-	vertical-align: center;
 	float:left;
 }
 nav ul li a{
@@ -57,9 +56,6 @@ nav ul li a{
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
 	border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	-o-border-radius: 0.3em;
-	-webkit-border-radius: 0.3em;
 
 	font-family: 'Lato', sans-serif;
 }
@@ -79,14 +75,6 @@ nav ul li a:hover, nav ul li.active a{
 }
 nav ul li:nth-child(5) a{
 	border-bottom:none;
-}
-
-li img
-{
-	height: 1em;
-	padding-right: 6px;
-	vertical-align:middle;
-	-webkit-user-drag: none;
 }
 
 #badge-plus {
@@ -157,18 +145,12 @@ li img
 }
 
 .tableau-film{
-
-	margin-top: 70px;	
-	padding-right: 100px;
-	text-align:center
-
+	text-align: center;
 }
-.tableau-film li {
+.tableau-film li{
 
-	margin-left: 0.5em;
-	float: left;	
-	
-
+	margin-left: 1em;
+	float: left;
 }
 .tableau-film img{
 
@@ -192,7 +174,4 @@ li img
 }
 .tableau-film img{
 	border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	-o-border-radius: 0.3em;
-	-webkit-border-radius: 0.3em;
 }
