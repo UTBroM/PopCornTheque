@@ -12,7 +12,7 @@
 
 		ini_set('dispay_errors', 'On');
 
-		$utilisateur_id = $_POST['utilisateur_id'];
+		$utilisateur_id = $_GET['utilisateur_id'];
 
 		try
 		{
