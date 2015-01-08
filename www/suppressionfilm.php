@@ -9,6 +9,7 @@
 	<body>
 		<?php
 
+			include 'header.php'; 			
 			ini_set('display_errors', 'On');
 
 			$idfilm = $_GET['idfilm'];

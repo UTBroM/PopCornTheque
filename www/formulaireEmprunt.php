@@ -7,6 +7,8 @@
 	</head>
 	<body>
 		<?php 
+			include 'header.php'; 
+			
 			$current_id_user = $_GET['current_id_user'];
 			$current_id_support = $_GET['current_id_support'];
 		?>
