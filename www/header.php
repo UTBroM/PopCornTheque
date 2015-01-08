@@ -16,6 +16,7 @@
 		}
 	?>
 		<li><a href="index.php">&#8962; Accueil</a></li>
+		<li><a href="propos.php">&#128640; A propos</a></li>
 		<li><a href="userSpace.php">&#9977; Mon Espace</a></li>
 		<li><a href="ajoutAmi.html">&#10084; Ajouter un(e) ami(e)</a></li>
 		<li><a href="deconnexion.php">&#11144; Deconnexion</a></li>
