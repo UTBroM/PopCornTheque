@@ -18,12 +18,7 @@
 
 		echo "Demande d'emprunt effectuée";
 
-		try{
-			$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-		}
-		catch (Exception $e){
-			die('Erreur : ' . $e->getMessage());
-		}
+		include 'connexionBDD.php';
 
 		$req = $bdd->prepare('INSERT INTO DEMANDE_EMPRUNT VALUES(:utilisateur_id, :support_id)');
 		$req->execute(array(

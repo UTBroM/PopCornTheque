@@ -22,12 +22,7 @@
 			$libre = FALSE;
 
 
-			try{
-				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-			}
-			catch (Exception $e){
-				die('Erreur : ' . $e->getMessage());
-			}
+			include 'connexionBDD.php';
 
 			$req = $bdd->prepare('INSERT INTO EMPRUNT VALUES(NULL, :current_id_user, :current_id_support, :currt_date, :retour_emprunt_date, NULL, NULL, :libre)');
 			$req->execute(array(

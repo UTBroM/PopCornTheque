@@ -14,14 +14,7 @@
 
 		$utilisateur_id = $_GET['utilisateur_id'];
 
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-		}
-		catch (Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
+		include 'connexionBDD.php';
 
 		$req = $bdd->prepare('SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ?');
 		$req->execute(array($utilisateur_id));

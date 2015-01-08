@@ -59,14 +59,7 @@
 
 			}
 
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include 'connexionBDD.php';
 
 
 			$reponse = $bdd->prepare('SELECT * FROM FILM WHERE FILM_IMDB_ID = ?');

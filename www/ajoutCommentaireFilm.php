@@ -30,12 +30,7 @@
 			$note = $_POST['note'];
 			$date_actuelle = date("Y-m-d H:i:s");
 
-			try{
-				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-			}
-			catch (Exception $e){
-				die('Erreur : ' . $e->getMessage());
-			}
+			include 'connexionBDD.php';
 
 			$req = $bdd->prepare('INSERT INTO COMMENTAIRES_FILM VALUES(NULL, :film_id, :user_id, :commentaire, :note, :date_actuelle)');
 			$req->execute(array(

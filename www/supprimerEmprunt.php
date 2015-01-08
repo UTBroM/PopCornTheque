@@ -11,12 +11,7 @@
 	$uti_id = $_GET['uti_id'];
 	$sup_id = $_GET['sup_id'];
 
-	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e){
-		die('Erreur : ' . $e->getMessage());
-	}
+	include 'connexionBDD.php';
 
 	$req = $bdd->prepare('DELETE FROM DEMANDE_EMPRUNT WHERE UTI_ID=? AND SUP_ID=?');
 	$req->execute(array(

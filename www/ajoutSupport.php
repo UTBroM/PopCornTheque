@@ -7,12 +7,7 @@
 	$support_nom = $_POST['support_nom'];
 
 
-	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e){
-		die('Erreur : ' . $e->getMessage());
-	}
+	include 'connexionBDD.php';
 
 	$req = $bdd->prepare('INSERT INTO SUPPORT VALUES(NULL, :film_id, :utilisateur_id, :support_nom, 1)');
 	$req->execute(array(

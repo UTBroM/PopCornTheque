@@ -8,14 +8,7 @@
 	$user = $_POST['user'];
 	$password = sha1($_POST['password']);
 
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
+	include 'connexionBDD.php';
 
 	$req = $bdd->prepare('SELECT UTI_MOT_DE_PASSE FROM UTILISATEURS WHERE UTI_ID = :nom');
 	$req->execute(array(

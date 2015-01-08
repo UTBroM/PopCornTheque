@@ -24,12 +24,7 @@
 
 		echo "Demande d'ami(e) effectuée";
 
-		try{
-			$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-		}
-		catch (Exception $e){
-			die('Erreur : ' . $e->getMessage());
-		}
+		include 'connexionBDD.php';
 
 		$req = $bdd->prepare('INSERT INTO ETRE_AMI VALUES(:target_user_id, :current_user_id)');
 		$req->execute(array(

@@ -18,12 +18,7 @@
 			$libre = TRUE;
 
 
-			try{
-				$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-			}
-			catch (Exception $e){
-				die('Erreur : ' . $e->getMessage());
-			}
+			include 'connexionBDD.php';
 
 			$req = $bdd->prepare('UPDATE EMPRUNT SET EMPR_RETOUR_REEL = :retour_emprunt_date, EMPR_RENDU = :libre WHERE EMPR_ID = :emprunt_id');
 			$req->execute(array(

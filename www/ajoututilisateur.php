@@ -12,14 +12,7 @@
 	$ville = $_POST['ville'];
 	$mail = $_POST['mail'];
 
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=PopCornTheque', 'poppoppop', 'nnd47D2JQWAzh97H');
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
+	include 'connexionBDD.php';
 
 	$req = $bdd->prepare('INSERT INTO UTILISATEURS VALUES(:user, :password, :nom, :prenom, :date_naissance, :rue, :code_postal, :ville, :mail)');
 	$req->execute(array(
