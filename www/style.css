@@ -4,19 +4,25 @@ body
 	color: black;
 
 }
-ul
-{
+
+h1{
+	text-align: center;
+}
+
+.loupe img{
+	width: 4em;
+	height: 4em;
+}
+
+ul{
 	list-style-type: none;
 	font-size: x-large;
 	padding-left: 0px;
 
 }
-nav li
-{
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 17px;
-}
+
+
+
 li img
 {
 	height: 1em;
@@ -38,7 +44,7 @@ li img
 	/*display: table;*/
 
 
-	background-color: orange;
+	background-color: DarkOrange;
 	/*border: 2px solid white;
 	border-radius: 12px; /* one half of ( (border * 2) + height + padding )
 	box-shadow: 1px 1px 1px black;
