@@ -15,11 +15,11 @@
 		exit();
 		}
 	?>
-		<li><a href="index.php">&#8962; Accueil</a></li>
-		<li><a href="propos.php">&#128640; A propos</a></li>
-		<li><a href="userSpace.php">&#9977; Mon Espace</a></li>
-		<li><a href="ajoutAmi.html">&#10084; Ajouter un(e) ami(e)</a></li>
-		<li><a href="deconnexion.php">&#11144; Deconnexion</a></li>
+		<li><a href="index.php"><img src="images/home.svg"> Accueil</a></li>
+		<li><a href="propos.php"><img src="images/rocket.svg"> A propos</a></li>
+		<li><a href="userSpace.php"><img src="images/espace.svg"> Mon Espace</a></li>
+		<li><a href="ajoutAmi.html"><img src="images/heart.svg"> Ajouter un(e) ami(e)</a></li>
+		<li><a href="deconnexion.php"><img src="images/deconnexion.svg"> Déconnexion</a></li>
 	</ul>
 	
 </nav>
