@@ -15,7 +15,7 @@ h1{
 	padding: 0.47em 1em;
 }
 h4{
-	font-size: 1em;
+	font-size: 0.5em;
 	padding: 0.3em;
 }
 h4:hover{
@@ -154,7 +154,10 @@ nav ul li:nth-child(5) a{
 }
 .tableau-film img{
 
-	height: 8em;
+	height: 15em;
+
+}
+.tableau-film img:hover {
 
 }
 .loupe{
