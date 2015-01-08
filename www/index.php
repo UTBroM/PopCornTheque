@@ -12,10 +12,6 @@
 
 		<h1>Bienvenue sur PopcornTeque</h1>
 
-		<ul>
-			<li class="menu"><img src="images/films.png" name="Logo films">Films</li>
-		</ul>
-		
 		<section>
 			<form action="filtrageFilms.php" method="post">
 			<p>
