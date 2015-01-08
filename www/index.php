@@ -14,11 +14,11 @@
 
 		<section class="recherche">
 			<form action="filtrageFilms.php" method="post">
-			<p>
-			    <img class="loupe" src="images/loupe.png">
-			    <input type="text" name="film" />
-			    <input type="submit" value="Rechercher" />
-			</p>
+				<div>
+					<img class="loupe" src="images/loupe.png">
+				    <input type="text" name="film" />
+				    <input type="submit" value="Rechercher" />
+				</div>
 			</form>
 		</section>
 		
@@ -34,7 +34,7 @@
 		while($donnees = $req->fetch()){
 
 			echo '<a href="detailsFilm.php?idfilm=',$donnees['FILM_ID'],'"><li>';
-			echo '<h5>',htmlspecialchars($donnees['FILM_TITRE']),"</h5>\n";
+			echo '<h4>',htmlspecialchars($donnees['FILM_TITRE']),"</h4>\n";
 			echo '<img src="', $donnees['FILM_AFFICHE'], '">';
 			echo "\n</li></a>";
 
