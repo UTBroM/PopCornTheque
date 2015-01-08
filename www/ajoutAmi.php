@@ -16,6 +16,7 @@
 
 			$target_user_id = $_POST['target_user_id'];
 
+		}
 		else{
 
 			$target_user_id = $_GET['target_user_id'];
