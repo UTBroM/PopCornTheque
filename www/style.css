@@ -90,7 +90,6 @@ nav ul li:nth-child(5) a{
 	right: 1em;
 	transition: box-shadow 120ms cubic-bezier(.25,.25,0,1);
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-	opacity: 0.7;
 	border-radius: 50%;
 	/*display: table;*/
 
@@ -135,6 +134,7 @@ nav ul li:nth-child(5) a{
 
 #badge-plus:hover{
 
+	opacity: 0.7;
 	box-shadow: 0 0 9px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
