@@ -48,7 +48,7 @@
 
 			$sortie = date("Y-m-d",strtotime($details->Released));
 			$posterURL = $details->Poster;
-			$poster = NULL;
+			$poster = "images/noposter.png";
 
 			if ($posterURL != "N/A"){
 
