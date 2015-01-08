@@ -12,7 +12,16 @@
 		include 'header.php'; 
 		ini_set('display_errors', 'On');
 
-		$target_user_id = $_POST['target_user_id'];
+		if(isset($_POST['target_user_id']){
+
+			$target_user_id = $_POST['target_user_id'];
+
+		else{
+
+			$target_user_id = $_GET['target_user_id'];
+
+		}
+
 		$current_user_id = $_SESSION['login'];
 
 		if($target_user_id == $current_user_id){
