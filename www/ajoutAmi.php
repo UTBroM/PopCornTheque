@@ -12,8 +12,6 @@
 		include 'header.php'; 
 		ini_set('display_errors', 'On');
 
-		include 'header.php';
-
 		$target_user_id = $_POST['target_user_id'];
 		$current_user_id = $_SESSION['login'];
 
