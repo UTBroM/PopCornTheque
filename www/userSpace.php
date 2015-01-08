@@ -69,7 +69,7 @@
 					$req3->execute(array($user));
 
 					while($donnees3 = $req3->fetch()){
-						echo htmlspecialchars($donnees3['UTI_ID_CIBLE']), "<br/>";
+						echo '<a href="listeFilmsUser.php?utilisateur_id=', htmlspecialchars($donnees3['UTI_ID_CIBLE']),'">',htmlspecialchars($donnees3['UTI_ID_CIBLE']), "</a><br/>";
 					}
 					$req3->closeCursor();
 					
