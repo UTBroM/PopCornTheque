@@ -31,6 +31,7 @@
 				'retour_emprunt_date' => $retour_emprunt_date,
 				'libre' => $libre
 			));
+			header('Location: userSpace.php');
 		?>
 	</body>
 </html>

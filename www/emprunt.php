@@ -43,6 +43,7 @@
 				'current_id_support' => $current_id_support,
 				'current_id_user' => $current_id_user,
 			));
+			header('Location: userSpace.php');
 		?>
 	</body>
 </html>
