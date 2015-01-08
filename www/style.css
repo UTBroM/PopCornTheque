@@ -173,11 +173,8 @@ li img
 .profil{
 	text-align: center;
 }
-.recherche ul{
-	margin:0.5em;
-	padding:0.5em;
-}
-.recherche li{
+
+.recherche{
 	display: inline-block;
 	right: 0.5em;
 	top: 0em;
@@ -185,4 +182,10 @@ li img
 }
 .recherche img{
 	height: 1.5em;
+}
+.tableau-film img{
+	border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
 }
