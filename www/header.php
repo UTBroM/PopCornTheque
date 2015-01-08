@@ -17,7 +17,6 @@
 	?>
 		<li><a href="userSpace.php">Mon Espace</a></li>
 		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
-		<li><a href="listeFilmsUser.html">Liste des Films par user</a></li>
 		<li><a href="deconnexion.php">Deconnexion</a></li>
 	</ul>
 </nav>
