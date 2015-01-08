@@ -12,7 +12,7 @@
 		include 'header.php'; 
 		ini_set('display_errors', 'On');
 
-		if(isset($_POST['target_user_id']){
+		if(isset($_POST['target_user_id'])){
 
 			$target_user_id = $_POST['target_user_id'];
 
