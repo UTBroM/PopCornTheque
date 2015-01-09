@@ -271,3 +271,50 @@ nav ul li a:hover, nav ul li.active a{
 	display: inline-block;
 	font-size: : 0.9em;
 }
+.connexion{
+	margin: 3em auto 0;
+	text-align: center;
+	background-color: lightgrey;
+	border-radius: 0.5em;
+
+	font-size: 18px;
+	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	outline:none;
+	width: 60%;
+}
+.connexion input{
+	border-radius: 0.3em;
+	margin: 4em;
+	padding: 7px;
+	width: 70%;
+}
+
+.connexion input:hover{
+	color:#4099E6;
+	box-shadow: 0.3em 0.3em 3em #000000;
+	opacity: 0.7;
+
+}
+.connexion label{
+	font-size: 2em;
+	padding: 2em;
+	color: grey;
+}
+.submit{
+	text-align: center;
+	font-size: 2em;
+	border-radius: 0.3em;
+	padding: 17px 30px;
+	float: right;
+
+
+}
+.submit:hover{
+	color:#4099E6;
+	box-shadow: 0.3em 0.3em 3em #000000;
+	opacity: 0.7;
+}

@@ -2,20 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Inscription</title>
 	</head>
 
 	<body>
+		<div class="connexion" >
+			<form action="connexion.php" method="post">
+					<label>Pseudo : </label><input type="text" name="user" required/><br/>
+					<label>Mot de passe : </label><input type="password" name="password" required/><br/>
 
-	<form action="connexion.php" method="post">
-		<p>
-		Pseudo : <input type="text" name="user" required/><br/>
-		Mot de passe : <input type="password" name="password" required/><br/>
-
-		<input type="submit" value="Valider" />
-		</p>
-        </form>
-
+					<input class="submit" type="submit" value="Valider" />
+		    </form>
+		</div>
 
 	</body>
 </html>
