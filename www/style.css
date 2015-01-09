@@ -258,3 +258,16 @@ nav ul li a:hover, nav ul li.active a{
 	display: inline-block;
 	font-size: 0.9em;
 }
+.propos{
+	padding: 3em;
+	line-height: 1.5em;
+
+}
+.auteur{
+	display: inline-block;
+	font-size: 0.9em;
+}
+.realisateur{
+	display: inline-block;
+	font-size: : 0.9em;
+}
