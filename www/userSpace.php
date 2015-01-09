@@ -72,9 +72,15 @@
 					$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
 					$req4->execute(array($user));
 
+					echo '<ul>';
+
 					while($donnees4 = $req4->fetch()){
-						echo htmlspecialchars($donnees4['UTI_ID_SOURCE']), "<br/>";
+						echo '<li>', htmlspecialchars($donnees4['UTI_ID_SOURCE']);
+						echo '<a href="http://popcorntheque.ddns.net/ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a>';
 					}
+
+					echo '</ul>';
+
 					$req4->closeCursor();
 				?>
 			</p>
