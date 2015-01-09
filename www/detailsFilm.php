@@ -38,7 +38,7 @@
 
 		while($donnees = $reqacteurs->fetch()){
 
-			echo '<li>', $donnees['ART_NOM'], ' ', $donnees['ART_PRENOM'], '</li>';
+			echo '<li>', $donnees['ART_PRENOM'], ' ', $donnees['ART_NOM'], '</li>';
 
 		}
 		echo '</ul>';
@@ -52,7 +52,7 @@
 
 		while($donnees = $reqrealisateur->fetch()){
 
-			echo '<li>', $donnees['ART_NOM'], ' ', $donnees['ART_PRENOM'], '</li>';
+			echo '<li>', $donnees['ART_PRENOM'], ' ', $donnees['ART_NOM'], '</li>';
 
 		}
 		echo '</ul>';
