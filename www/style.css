@@ -10,6 +10,8 @@ body{
 p{
 	display: block;
 	border-top: 1em;
+	font-size: 1em;
+    text-align: justify;
 }
 
 h1{
@@ -190,4 +192,27 @@ nav ul li a:hover, nav ul li.active a{
 }
 .tableau-film img{
 	border-radius: 0.3em;
+}
+
+.commentaire{
+	margin: 0.3em;
+}
+.commentaire ul li{
+	display: inline-block;
+	margin-right: 0.5em;
+}
+.commentaire ul li p{
+	font-size: 0.6em;
+}
+.pseudo-commentaire{
+	font-weight: bold;
+	font-size: 0.85em;
+}
+.date-commentaire{
+	font-style: italic;
+	font-size: 0.75em;
+}
+.note-commentaire{
+	font-style: italic;
+	font-size: 0.7em;	
 }
