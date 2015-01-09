@@ -30,7 +30,34 @@
 		}
 
 		echo '<h2>Synopsis :</h2><p>', $donnees['FILM_SYNOPSIS'], '</p>';
-		
+
+		echo '<h2>Acteurs :</h2><ul>';
+
+		$reqacteurs = $bdd->prepare('SELECT A.ART_NOM, A.ART_PRENOM FROM AVOIR_JOUE_DANS AS J INNER JOIN ARTISTE AS A ON J.ART_ID = A.ART_ID WHERE FILM_ID = ?');
+		$reqacteurs->execute(array($idfilm));
+
+		while($donnees = $reqacteurs->fetch()){
+
+			echo '<li>', $donnees['ART_NOM'], ' ', $donnees['ART_PRENOM'], '</li>';
+
+		}
+		echo '</ul>';
+
+		$reqacteurs->closeCursor();
+
+		echo '<h2>Réalisateur :</h2><ul>';
+
+		$reqrealisateur = $bdd->prepare('SELECT A.ART_NOM, A.ART_PRENOM FROM REALISER AS R INNER JOIN ARTISTE AS A ON R.ART_ID = A.ART_ID WHERE FILM_ID = ?');
+		$reqrealisateur->execute(array($idfilm));
+
+		while($donnees = $reqrealisateur->fetch()){
+
+			echo '<li>', $donnees['ART_NOM'], ' ', $donnees['ART_PRENOM'], '</li>';
+
+		}
+		echo '</ul>';
+
+		$reqrealisateur->closeCursor();
 
 		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ? AND SUP_LIBRE = 1 AND UTI_ID != ?');
 		$req2->execute(array($idfilm, $_SESSION['login']));
@@ -42,6 +69,8 @@
 
 		}
 		echo '</ul>';
+
+		$req2->closeCursor();
 	?>
 
 		<h2>Je possède ce film !</h2>
@@ -77,6 +106,8 @@
 
 		}
 		echo '</ul>';
+
+		$req3->closeCursor();
 
 	?>
 
