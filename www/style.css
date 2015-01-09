@@ -51,7 +51,6 @@ ul{
 	padding-left: 0px;
 }
 a{
-	display: block;
 	color: white;
 }
 a:hover{
@@ -175,10 +174,16 @@ nav ul li a:hover, nav ul li.active a{
 	top: 1em;
 }
 .license:hover span{
-	display: block;
+	display: inline-block;
 	position: absolute;
 	top: 3em;
 	right: 3em;
+	width: 30em;
+	height: 2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
 }
 .tableau-film{
 	text-align: center;
