@@ -114,19 +114,30 @@
 		</section>
 
 		<section>
-			<p>
-				<h2>Mes prets<br/></h2>
+			<table border="1">
+				<caption><h2>Mes Emprunts</h2></caption>
+				<thead>
+					<tr>
+					<th>Emprunteur
+					<th>Titre du film
+					<th>Date de Retour prévue
+					<th>Terminer l'emprunt
+				<tbody>	
 				<?php 
 					$req5 = $bdd->prepare("SELECT S.UTI_ID, E.EMPR_RETOUR_THEORIQUE, F.FILM_TITRE, E.UTI_ID, E.EMPR_ID FROM EMPRUNT AS E INNER JOIN SUPPORT AS S ON E.SUP_ID = S.SUP_ID INNER JOIN FILM AS F ON S.FILM_ID = F.FILM_ID WHERE S.UTI_ID = ? AND EMPR_RENDU = FALSE");
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['FILM_TITRE']), "    a été emprunté par    ", htmlspecialchars($donnees5['UTI_ID']), "    et devra etre rendu le    ", date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE']));
-						echo '     <a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendu</a><br/>';
+
+						echo '<tr><td>', htmlspecialchars($donnees5['UTI_ID']);
+						echo '<td>', htmlspecialchars($donnees5['FILM_TITRE']);
+						echo '<td>', date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE']));
+						echo '<td><a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendu</a>';
+
 					}
 					$req5->closeCursor();
 				?>
-			</p>
+			</table>
 		</section>
 
 		<section>
