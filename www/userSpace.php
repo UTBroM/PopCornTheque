@@ -74,22 +74,23 @@
 			?>
 		</section>
 		<section>
-			<h2>Followers</h2>
-			<?php 
-				$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
-				$req4->execute(array($user));
+			<table border="1">
+				<caption><h2>Followers</h2></caption>
+				<thead>
+					<tr>
+					<th>Pseudo
+					<th>Ajouter
+				<tbody>
+				<?php 
+					$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
+					$req4->execute(array($user));
 
-				echo '<ul>';
-
-				while($donnees4 = $req4->fetch()){
-					echo '<li><ul><li>', htmlspecialchars($donnees4['UTI_ID_SOURCE']), '</li>';
-						echo '<li><a href="ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a></li></ul></li>';
-				}
-
-				echo '</ul>';
-
-				$req4->closeCursor();
-			?>
+					while($donnees4 = $req4->fetch()){
+						echo "<tr>\n<td>", htmlspecialchars($donnees4['UTI_ID_SOURCE']), "\n<td>",'<a href="ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis', "\n";
+					}
+					$req4->closeCursor();
+				?>
+			</table>
 		</section>
 
 		<section>
