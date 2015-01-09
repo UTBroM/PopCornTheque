@@ -174,11 +174,11 @@ nav ul li a:hover, nav ul li.active a{
 	right: 1em;
 	top: 1em;
 }
-.license:hover{
+.license:hover span{
 	display: block;
 	position: absolute;
-	top: 15em;
-	right: 15em;
+	top: 3em;
+	right: 3em;
 }
 .tableau-film{
 	text-align: center;
