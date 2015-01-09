@@ -21,7 +21,7 @@
 
 		$donnees = $req->fetch();
 		echo '<h1>', $donnees['FILM_TITRE'], '</h1>';
-		echo '<img src="', $donnees['FILM_AFFICHE'], '">';
+		echo '<div class="affiche"><img src="', $donnees['FILM_AFFICHE'], '"></div>';
 		echo '<h2>Synopsis :</h2><p>', $donnees['FILM_SYNOPSIS'], '</p>';
 		
 
@@ -35,7 +35,7 @@
 
 		}
 		echo '</ul>';
-?>
+	?>
 
 		<h2>Je possède ce film !</h2>
 
@@ -50,7 +50,7 @@
 			<option value="Autre">Autre ...</option>
 			</select>
 
-<?php
+	<?php
 
 		echo '<input type="hidden" name="film_id" value=',$idfilm,'>';
 		echo '<input type="hidden" name="utilisateur_id" value="',$_SESSION['login'],'">';

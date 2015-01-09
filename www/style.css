@@ -216,3 +216,6 @@ nav ul li a:hover, nav ul li.active a{
 	font-style: italic;
 	font-size: 0.7em;	
 }
+.affiche{
+	text-align: center;
+}
