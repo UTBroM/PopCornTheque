@@ -61,9 +61,12 @@
 
 		echo '<h2>Commentaires :</h2><ul>';
 		while($donnees = $req3->fetch()){
-
-			echo '<li><h5>', htmlspecialchars($donnees['UTI_ID']), 'le ', date("d/m/Y", strtotime($donnees['COMF_DATE'])), "</h5><h5>Note : ", $donnees['COMF_NOTE'], '/10</h5></li>';
-			echo '<li><p>', htmlspecialchars($donnees['COMF_CONTENU']), '</p></li>';
+			echo '<li class="commentaire"><ul>';
+				echo '<li class="pseudo-commentaire">', htmlspecialchars($donnees['UTI_ID']), '</li>'; 
+				echo '<li class="date-commentaire"> (', date("d/m/Y", strtotime($donnees['COMF_DATE'])), ') : </li>';
+				echo '<li ><p>', htmlspecialchars($donnees['COMF_CONTENU']), '</p></li>';
+				echo '<li class="note-commentaire">Note : ', $donnees['COMF_NOTE'], '/10</li>';
+			echo '</div></ul>';
 
 		}
 		echo '</ul>';
@@ -73,7 +76,7 @@
 		<form action="ajoutCommentaireFilm.php" method="post">
 			<p>
 
-				ID du Film :<input type="hidden" name="film_id"  value=<?php echo $idfilm; ?>></br>
+				<input type="hidden" name="film_id"  value=<?php echo $idfilm; ?>></br>
 				Note : 	<input type="radio" name="note" value="0" id="case0" ><label for="case0">0</label>
 					<input type="radio" name="note" value=1 id="case1" ><label for="case1">1</label>
 					<input type="radio" name="note" value=2 id="case2" ><label for="case2">2</label>
