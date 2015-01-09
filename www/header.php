@@ -1,6 +1,6 @@
 <header>
 	<a href="index.php">
-		<img src="images/logo.png" height="120px">
+		<img src="images/logo.png" height="140px">
 	</a>
 </header>
 <nav>
@@ -15,11 +15,11 @@
 		exit();
 		}
 	?>
-		<li><a href="index.php">Accueil</a></li>
-		<li><a href="propos.php">A propos</a></li>
-		<li><a href="userSpace.php">Mon Espace</a></li>
-		<li><a href="ajoutAmi.html">Ajouter un(e) ami(e)</a></li>
-		<li><a href="deconnexion.php">Déconnexion</a></li>
+		<li><a href="index.php"><img src="images/house.png" height="14" weight="14"> Accueil</a></li>
+		<li><a href="propos.php"><img src="images/rocket.png" height="14" weight="14"> A propos</a></li>
+		<li><a href="userSpace.php"><img src="images/espace.png" height="14" weight="14"> Mon Espace</a></li>
+		<li><a href="ajoutAmi.html"><img src="images/heart.png" height="14" weight="14"> Ajouter un(e) ami(e)</a></li>
+		<li><a href="deconnexion.php"><img src="images/deconnexion.png" height="14" weight="14"> Déconnexion</a></li>
 	</ul>
 	
 </nav>
