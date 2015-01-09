@@ -25,8 +25,10 @@
 			<?php
 				include 'connexionBDD.php';
 
+				$limite = ($_GET['page']-1)*30
+
 				$req = $bdd->prepare("SELECT *  FROM FILM LIMIT ?,30");
-				$req->execute(array((1-$_GET['page'])*30));
+				$req->execute(array($limite));
 
 				while($donnees = $req->fetch()){
 
