@@ -54,6 +54,9 @@ a{
 	display: block;
 	color: white;
 }
+a:hover{
+	color: #4099E6;
+}
 nav{
 	display: block;
 	background-color: #3C4C55;
