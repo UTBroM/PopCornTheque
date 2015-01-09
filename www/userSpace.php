@@ -23,10 +23,10 @@
 			$req->execute(array($user));
 
 			echo "<br/><br/><table>\n<caption><h2>Mes Films</h2></caption>\n";
-			echo "<thead>\n<tr>\n<th>Id du film\n<th>Titre\n<th>Nom du support\n<th>\n";
+			echo "<thead>\n<tr>\n<th>Titre\n<th>Nom du support\n<th>\n";
 			echo "<tbody>\n";
 			while($donnees = $req->fetch()){
-				echo "<tr>\n<td>",$donnees['FILM_ID'],"\n<td>",$donnees['FILM_TITRE'],"\n<td>",htmlspecialchars($donnees['SUP_NOM']),"\n";
+				echo "<tr>\n<td>",$donnees['FILM_TITRE'],"\n<td>",htmlspecialchars($donnees['SUP_NOM']),"\n";
 			}
 			echo"</table>";
 
