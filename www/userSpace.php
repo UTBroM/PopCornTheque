@@ -98,15 +98,16 @@
 				<caption><h2>Mes Emprunts</h2></caption>
 				<thead>
 					<tr>
+					<th>Propriétaire
 					<th>Titre du film
 					<th>Date de Retour
 				<tbody>				
 				<?php 
-					$req5 = $bdd->prepare("SELECT E.EMPR_RETOUR_THEORIQUE, F.FILM_TITRE FROM EMPRUNT AS E INNER JOIN SUPPORT AS S ON E.SUP_ID = S.SUP_ID INNER JOIN FILM AS F ON S.FILM_ID = F.FILM_ID WHERE E.UTI_ID = ? AND EMPR_RENDU = FALSE");
+					$req5 = $bdd->prepare("SELECT  S.UTI_ID, E.EMPR_RETOUR_THEORIQUE, F.FILM_TITRE FROM EMPRUNT AS E INNER JOIN SUPPORT AS S ON E.SUP_ID = S.SUP_ID INNER JOIN FILM AS F ON S.FILM_ID = F.FILM_ID WHERE E.UTI_ID = ? AND EMPR_RENDU = FALSE");
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo "<tr>\n<td>", htmlspecialchars($donnees5['FILM_TITRE']), "\n<td>", date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE'])), "\n";
+						echo "<tr><td>", htmlspecialchars($donnees5['UTI_ID']), "<td>", htmlspecialchars($donnees5['FILM_TITRE']), "<td>", date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE']));
 					}
 					echo"</table>";
 					$req5->closeCursor();
