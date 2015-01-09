@@ -10,12 +10,6 @@ body{
 header span{
 	display: none;
 }
-header span:hover{
-	display: block;
-	position: absolute;
-	top: 15em;
-	right: 15em;
-}
 p{
 	display: block;
 	border-top: 1em;
@@ -47,6 +41,9 @@ h4:hover{
 	-o-transition: 0.5s all;
 }
 
+caption{
+	text-align: left;
+}
 ul{
 	display: block;
 	list-style-type: none;
@@ -174,7 +171,12 @@ nav ul li a:hover, nav ul li.active a{
 	right: 1em;
 	top: 1em;
 }
-
+.license:hover{
+	display: block;
+	position: absolute;
+	top: 15em;
+	right: 15em;
+}
 .tableau-film{
 	text-align: center;
 }
