@@ -22,6 +22,9 @@
 		$donnees = $req->fetch();
 		echo '<h1>', $donnees['FILM_TITRE'], '</h1>';
 		echo '<div class="affiche"><img src="', $donnees['FILM_AFFICHE'], '"></div>';
+
+		echo '<h2>Note : ', $donnees['FILM_NOTE'], '<h2>';
+
 		echo '<h2>Synopsis :</h2><p>', $donnees['FILM_SYNOPSIS'], '</p>';
 		
 
