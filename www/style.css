@@ -229,7 +229,7 @@ nav ul li a:hover, nav ul li.active a{
 	font-size: 0.6em;
 }
 .pseudo-commentaire{
-	margin-left: 0.4em;
+	margin-left: 0.5em;
 	font-weight: bold;
 	font-size: 0.85em;
 }
@@ -243,9 +243,18 @@ nav ul li a:hover, nav ul li.active a{
 }
 .affiche{
 	text-align: center;
+}
+.affiche img{
 	border-radius: 0.3em;
+	box-shadow: 0.3em 0.3em 1em #000000;
+
 }
 .emprunt li{
 	display: inline-block;
+	margin-right: 0.5em;
 	font-size: 0.8em;
+}
+.followers ul li{
+	display: inline-block;
+	font-size: 0.9em;
 }
