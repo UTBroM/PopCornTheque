@@ -94,7 +94,7 @@
 
 		<section>
 			<table border="1">
-				<caption><h2>Mes Films</h2></caption>
+				<caption><h2>Mes Emprunts</h2></caption>
 				<thead>
 					<tr>
 					<th>Titre du film
