@@ -31,7 +31,7 @@
 
 		echo '<h2>Synopsis :</h2><p>', $donnees['FILM_SYNOPSIS'], '</p>';
 
-		echo '<h2>Acteurs :</h2><ul>';
+		echo '<h2>Acteurs :</h2><ul class="auteur">';
 
 		$reqacteurs = $bdd->prepare('SELECT A.ART_NOM, A.ART_PRENOM FROM AVOIR_JOUE_DANS AS J INNER JOIN ARTISTE AS A ON J.ART_ID = A.ART_ID WHERE FILM_ID = ?');
 		$reqacteurs->execute(array($idfilm));
@@ -45,7 +45,7 @@
 
 		$reqacteurs->closeCursor();
 
-		echo '<h2>Réalisateur :</h2><ul>';
+		echo '<h2>Réalisateur :</h2><ul class="realisateur">';
 
 		$reqrealisateur = $bdd->prepare('SELECT A.ART_NOM, A.ART_PRENOM FROM REALISER AS R INNER JOIN ARTISTE AS A ON R.ART_ID = A.ART_ID WHERE FILM_ID = ?');
 		$reqrealisateur->execute(array($idfilm));
