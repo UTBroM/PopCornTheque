@@ -28,7 +28,7 @@
 		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ? AND SUP_LIBRE = 1');
 		$req2->execute(array($idfilm));
 
-		echo "<h2>Utilisateurs qui disposent de ce film (cliquez pour faire une demande d'emprunt):</h2><ul>";
+		echo '<h2>Utilisateurs qui disposent de ce film (cliquez pour faire une demande d\'emprunt):</h2><ul class="emprunt">';
 		while($donnees = $req2->fetch()){
 
 			echo '<li><a href="demandeEmprunt.php?sup_id=', $donnees['SUP_ID'], '">', htmlspecialchars($donnees['UTI_ID']), ' (', htmlspecialchars($donnees['SUP_NOM']), ')', '</a></li>';
