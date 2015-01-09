@@ -318,3 +318,34 @@ nav ul li a:hover, nav ul li.active a{
 	box-shadow: 0.3em 0.3em 3em #000000;
 	opacity: 0.7;
 }
+.formulaire{
+	margin: 3em auto 0;
+	text-align: center;
+	background-color: lightgrey;
+	border-radius: 0.5em;
+
+	font-size: 18px;
+	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	outline:none;
+	width: 60%;
+}
+.formulaire input{
+	border-radius: 0.3em;
+	margin: 1em;
+	padding: 3px;
+	width: 44%;
+}
+.formulaire input:hover{
+	color:#4099E6;
+	box-shadow: 0.3em 0.3em 3em #000000;
+	opacity: 0.7;
+}
+.formulaire label{
+	font-size: 1.5em;
+	padding: 1em;
+	color: grey;
+}

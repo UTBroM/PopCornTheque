@@ -2,27 +2,27 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Inscription</title>
 	</head>
 
 	<body>
+		<div class="formulaire">
+			<form action="ajoututilisateur.php" method="post">
+					<label>Pseudo : </label><input type="text" name="user" required/><br/>
+					<label>Nom : </label><input type="text" name="nom" required/><br/>
+					<label>Prenom : </label><input type="text" name="prenom" required/><br/>
+					<label>Date de naissance : </label><input type="date" name="date_naissance" required/><br/>
+					<label>Rue : </label><input type="text" name="rue" required/><br/>
+					<label>Code postal : </label><input type="number" name="code_postal" required/><br/>
+					<label>Ville : </label><input type="text" name="ville" required/><br/>
+					<label>Email : </label><input type="email" name="mail" required/><br/>
+					<label>Mot de passe : </label><input type="password" name="password" required/><br/>
 
-	<form action="ajoututilisateur.php" method="post">
-		<p>
-		Pseudo : <input type="text" name="user" required/><br/>
-		Nom : <input type="text" name="nom" required/><br/>
-		Prenom : <input type="text" name="prenom" required/><br/>
-		Date de naissance : <input type="date" name="date_naissance" required/><br/>
-		Rue : <input type="text" name="rue" required/><br/>
-		Code postal : <input type="number" name="code_postal" required/><br/>
-		Ville : <input type="text" name="ville" required/><br/>
-		Email : <input type="email" name="mail" required/><br/>
-		Mot de passe : <input type="password" name="password" required/><br/>
+					<input class="submit" type="submit" value="Valider" />
+				</p>
+	        </form>
 
-		<input type="submit" value="Valider" />
-		</p>
-        </form>
-
-
+        </div>
 	</body>
 </html>
