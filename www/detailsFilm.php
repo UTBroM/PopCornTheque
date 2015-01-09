@@ -25,7 +25,7 @@
 		echo '<h2>Synopsis :</h2><p>', $donnees['FILM_SYNOPSIS'], '</p>';
 		
 
-		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ?');
+		$req2 = $bdd->prepare('SELECT * FROM SUPPORT WHERE FILM_ID = ? AND SUP_LIBRE = 1');
 		$req2->execute(array($idfilm));
 
 		echo "<h2>Utilisateurs qui disposent de ce film (cliquez pour faire une demande d'emprunt):</h2><ul>";
