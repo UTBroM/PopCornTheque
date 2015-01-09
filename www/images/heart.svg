@@ -1,12 +1,81 @@
-<?xml version="1.0"?>
-
-<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
-<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" stroke="black" text-rendering="auto" stroke-linecap="square" stroke-miterlimit="10" stroke-opacity="1" shape-rendering="auto" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   fill-opacity="1"
+   color-rendering="auto"
+   color-interpolation="auto"
+   stroke="black"
+   text-rendering="auto"
+   stroke-linecap="square"
+   stroke-miterlimit="10"
+   stroke-opacity="1"
+   shape-rendering="auto"
+   fill="black"
+   stroke-dasharray="none"
+   font-weight="normal"
+   stroke-width="1"
+   font-family="'Dialog'"
+   font-style="normal"
+   stroke-linejoin="miter"
+   font-size="12"
+   stroke-dashoffset="0"
+   image-rendering="auto"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="heart.svg">
+  <metadata
+     id="metadata13">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1331"
+     inkscape:window-height="750"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="1.2685914"
+     inkscape:cx="202.20246"
+     inkscape:cy="828.00703"
+     inkscape:window-x="35"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <!--Unicode Character 'HEAVY BLACK HEART' (U+2764)-->
-  <defs id="genericDefs" />
-  <g>
-    <g>
-      <path d="M131.0625 226.5469 Q145.8281 183.375 189.5625 183.375 Q215.4375 183.375 233.7188 196.5234 Q252 209.6719 252 228.9375 Q252 244.5469 244.1953 258.3281 Q236.3906 272.1094 213.4688 293.7656 Q186.6094 318.5156 176.7656 328.9219 Q166.9219 339.3281 155.8828 355.1484 Q144.8438 370.9688 141.4688 377.2969 Q138.5156 382.9219 136.2656 384.3984 Q134.0156 385.875 131.0625 385.875 Q128.1094 385.875 126.0703 384.75 Q124.0312 383.625 120.6562 377.2969 Q117.2812 370.9688 106.6641 355.7109 Q96.0469 340.4531 86.1328 329.9766 Q76.2188 319.5 48.6562 293.7656 Q28.5469 274.9219 19.3359 260.8594 Q10.125 246.7969 10.125 230.0625 Q10.125 209.1094 28.4062 196.2422 Q46.6875 183.375 72.2812 183.375 Q91.6875 183.375 106.8047 192.5859 Q121.9219 201.7969 131.0625 226.5469 Z" stroke="none" />
+  <defs
+     id="genericDefs" />
+  <g
+     id="g5"
+     transform="translate(-8.6710347,-181.42069)">
+    <g
+       id="g7">
+      <path
+         d="m 131.0625,226.5469 q 14.7656,-43.1719 58.5,-43.1719 25.875,0 44.1563,13.1484 Q 252,209.6719 252,228.9375 q 0,15.6094 -7.8047,29.3906 -7.8047,13.7813 -30.7265,35.4375 -26.8594,24.75 -36.7032,35.1563 -9.8437,10.4062 -20.8828,26.2265 -11.039,15.8204 -14.414,22.1485 -2.9532,5.625 -5.2032,7.1015 -2.25,1.4766 -5.2031,1.4766 -2.9531,0 -4.9922,-1.125 -2.0391,-1.125 -5.4141,-7.4531 -3.375,-6.3281 -13.9921,-21.586 Q 96.0469,340.4531 86.1328,329.9766 76.2188,319.5 48.6562,293.7656 28.5469,274.9219 19.3359,260.8594 10.125,246.7969 10.125,230.0625 q 0,-20.9531 18.2812,-33.8203 18.2813,-12.8672 43.875,-12.8672 19.4063,0 34.5235,9.2109 15.1172,9.211 24.2578,33.961 z"
+         id="path9"
+         inkscape:connector-curvature="0"
+         style="stroke:none" />
     </g>
   </g>
 </svg>
