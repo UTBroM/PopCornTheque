@@ -48,6 +48,7 @@ a{
 }
 nav{
 	display: block;
+	background-color: #3C4C55;
 	border-top: 2px solid white;
 	border-bottom: 2px solid white;
 	padding: 0.3em;
