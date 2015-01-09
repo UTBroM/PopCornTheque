@@ -54,7 +54,7 @@
 
 		echo '<input type="hidden" name="film_id" value=',$idfilm,'>';
 		echo '<input type="hidden" name="utilisateur_id" value="',$_SESSION['login'],'">';
-		echo '<input type="submit" value="Valider">';
+		echo '<input type="submit" value="Valider"></form>';
 
 		$req3 = $bdd->prepare('SELECT * FROM COMMENTAIRES_FILM WHERE FILM_ID = ?');
 		$req3->execute(array($idfilm));
