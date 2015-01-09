@@ -170,6 +170,7 @@ nav ul li a:hover, nav ul li.active a{
 }
 
 .license{
+	position: absolute;
 	right: 1em;
 	top: 1em;
 }
@@ -218,6 +219,7 @@ nav ul li a:hover, nav ul li.active a{
 	font-size: 0.6em;
 }
 .pseudo-commentaire{
+	margin-left: 0.4em;
 	font-weight: bold;
 	font-size: 0.85em;
 }
