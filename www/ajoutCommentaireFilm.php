@@ -41,9 +41,17 @@
 				'date_actuelle' => $date_actuelle
 			));
 
+			$req2 = $bdd->prepare('SELECT AVG(COMF_NOTE) FROM COMMENTAIRES_FILM WHERE FILM_ID = ?');
+			$req2->execute(array($film_id));
+
+			$moyenne = $req2->fetch()[0];
+
+			$req3 = $bdd->prepare('UPDATE FILM SET FILM_NOTE = ? WHERE FILM_ID = ?');
+			$req3->execute(array($moyenne, $film_id));
+
 			header("Location: ".$_SERVER['HTTP_REFERER']."");
 			
-			$req->closeCursor();
+			$req2->closeCursor();
 		?>
 	</body>
 </html>
