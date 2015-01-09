@@ -149,7 +149,7 @@
 														ON DE.SUP_ID = S.SUP_ID 
 													INNER JOIN FILM AS F 
 														ON S.FILM_ID = F.FILM_ID  
-													WHERE S.UTI_ID = ? ");
+													WHERE S.UTI_ID = ? AND S.SUP_LIBRE = 1");
 					
 					$req7->execute(array($user));
 
