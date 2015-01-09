@@ -82,7 +82,7 @@
 
 					while($donnees4 = $req4->fetch()){
 						echo '<li>', htmlspecialchars($donnees4['UTI_ID_SOURCE']);
-						echo '<a href="http://popcorntheque.ddns.net/ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a>';
+						echo '<a href="ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a>';
 					}
 
 					echo '</ul>';
