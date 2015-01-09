@@ -59,37 +59,37 @@
 		</section>
 		
 		<section>
-			<p>
-				<h2>Mes amis<br/></h2>
-				<?php 
-					$req2->closeCursor();
+			<h2>Mes amis<br/></h2>
+			<?php 
+				$req2->closeCursor();
 
-					$req3 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_SOURCE = ? ");
-					$req3->execute(array($user));
+				$req3 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_SOURCE = ? ");
+				$req3->execute(array($user));
 
-					while($donnees3 = $req3->fetch()){
-						echo '<a href="listeFilmsUser.php?utilisateur_id=', htmlspecialchars($donnees3['UTI_ID_CIBLE']),'">',htmlspecialchars($donnees3['UTI_ID_CIBLE']), "</a><br/>";
-					}
-					$req3->closeCursor();
-					
-				?>
-				<h2>Followers</h2>
-				<?php 
-					$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
-					$req4->execute(array($user));
+				while($donnees3 = $req3->fetch()){
+					echo '<a href="listeFilmsUser.php?utilisateur_id=', htmlspecialchars($donnees3['UTI_ID_CIBLE']),'">',htmlspecialchars($donnees3['UTI_ID_CIBLE']), "</a><br/>";
+				}
+				$req3->closeCursor();
+				
+			?>
+		</section>
+		<section>
+			<h2>Followers</h2>
+			<?php 
+				$req4 = $bdd->prepare("SELECT * FROM ETRE_AMI WHERE UTI_ID_CIBLE = ? ");
+				$req4->execute(array($user));
 
-					echo '<ul>';
+				echo '<ul>';
 
-					while($donnees4 = $req4->fetch()){
-						echo '<li>', htmlspecialchars($donnees4['UTI_ID_SOURCE']);
-						echo '<a href="ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a>';
-					}
+				while($donnees4 = $req4->fetch()){
+					echo '<li><ul><li>', htmlspecialchars($donnees4['UTI_ID_SOURCE']), '</li>';
+						echo '<li><a href="ajoutAmi.php?target_user_id=', $donnees4['UTI_ID_SOURCE'], '">Ajouter aux amis</a></li></ul></li>';
+				}
 
-					echo '</ul>';
+				echo '</ul>';
 
-					$req4->closeCursor();
-				?>
-			</p>
+				$req4->closeCursor();
+			?>
 		</section>
 
 		<section>
