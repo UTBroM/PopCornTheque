@@ -27,8 +27,8 @@
 				'libre' => $libre
 			));
 
-			$req = $bdd->prepare('SELECT SUP_ID FROM EMPRUNT WHERE EMPR_ID = :emprunt_id');
-			$req->execute(array(
+			$req2 = $bdd->prepare('SELECT SUP_ID FROM EMPRUNT WHERE EMPR_ID = :emprunt_id');
+			$req2->execute(array(
 				'emprunt_id' => $emprunt_id
 			));
 
