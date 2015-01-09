@@ -18,13 +18,19 @@
 			echo '<h1>Profil de ',htmlspecialchars($user), "</h1>";
 
 			include 'connexionBDD.php';
+		?>
 
+		<table border="1">
+			<caption><h2>Mes Films</h2></caption>
+			<thead>
+				<tr>
+				<th>Titre du film
+				<th>Nom du Support
+			<tbody>
+		<?php
 			$req = $bdd->prepare("SELECT F.FILM_ID, SUP_NOM, FILM_AFFICHE, FILM_TITRE FROM SUPPORT AS S INNER JOIN FILM AS F ON F.FILM_ID = S.FILM_ID WHERE UTI_ID = ? ORDER BY F.FILM_TITRE");
 			$req->execute(array($user));
 
-			echo "<br/><br/><table>\n<caption><h2>Mes Films</h2></caption>\n";
-			echo "<thead>\n<tr>\n<th>Titre\n<th>Nom du support\n<th>\n";
-			echo "<tbody>\n";
 			while($donnees = $req->fetch()){
 				echo "<tr>\n<td>",$donnees['FILM_TITRE'],"\n<td>",htmlspecialchars($donnees['SUP_NOM']),"\n";
 			}
