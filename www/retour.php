@@ -26,6 +26,19 @@
 				'retour_emprunt_date' => $retour_emprunt_date,
 				'libre' => $libre
 			));
+
+			$req = $bdd->prepare('SELECT SUP_ID FROM EMPRUNT WHERE EMPR_ID = :emprunt_id');
+			$req->execute(array(
+				'emprunt_id' => $emprunt_id
+			));
+
+			$current_id_support = $req2->fetch()[0];
+
+			$req3 = $bdd->prepare('UPDATE SUPPORT SET SUP_LIBRE = 1 WHERE SUP_ID = :current_id_support');
+			$req3->execute(array(
+				'current_id_support' => $current_id_support
+			));
+
 			header('Location: userSpace.php');
 		?>
 	</body>

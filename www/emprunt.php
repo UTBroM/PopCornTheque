@@ -38,6 +38,12 @@
 				'current_id_support' => $current_id_support,
 				'current_id_user' => $current_id_user,
 			));
+
+			$req3 = $bdd->prepare('UPDATE SUPPORT SET SUP_LIBRE = 0 WHERE SUP_ID = :current_id_support');
+			$req3->execute(array(
+				'current_id_support' => $current_id_support
+			));
+
 			header('Location: userSpace.php');
 		?>
 	</body>
