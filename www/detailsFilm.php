@@ -35,7 +35,26 @@
 
 		}
 		echo '</ul>';
+?>
 
+		<h2>Je possède ce film !</h2>
+
+		<form action="ajoutSupport.php" method="post">
+
+			Nom du support : <select name="support_nom">
+			<option value="DVD">DVD</option>
+			<option value="Blu-Ray">Blu-Ray</option>
+			<option value="VHS">VHS</option>
+			<option value="Support Virtuel">Support Virtuel</option>
+			<option value="Bobine">Bobine</option>
+			<option value="Autre">Autre ...</option>
+			</select>
+
+<?php
+
+		echo '<input type="hidden" name="film_id" value=',$idfilm,'>';
+		echo '<input type="hidden" name="utilisateur_id" value="',$_SESSION['login'],'">';
+		echo '<input type="submit" value="Valider">';
 
 		$req3 = $bdd->prepare('SELECT * FROM COMMENTAIRES_FILM WHERE FILM_ID = ?');
 		$req3->execute(array($idfilm));
