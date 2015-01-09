@@ -94,7 +94,7 @@
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['SUP_ID']), "   à rendre le  ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']), "     ";
+						echo htmlspecialchars($donnees5['SUP_ID']), "   à rendre le  ", date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE'])), "     ";
 						
 					}
 					$req5->closeCursor();
@@ -110,7 +110,7 @@
 					$req5->execute(array($user));
 
 					while($donnees5 = $req5->fetch()){
-						echo htmlspecialchars($donnees5['FILM_TITRE']), "    a été emprunté par    ", htmlspecialchars($donnees5['UTI_ID']), "    et devra etre rendu le    ", htmlspecialchars($donnees5['EMPR_RETOUR_THEORIQUE']);
+						echo htmlspecialchars($donnees5['FILM_TITRE']), "    a été emprunté par    ", htmlspecialchars($donnees5['UTI_ID']), "    et devra etre rendu le    ", date("d/m/Y", strtotime($donnees5['EMPR_RETOUR_THEORIQUE']));
 						echo '     <a href="retour.php?emprunt_id=', htmlspecialchars($donnees5['EMPR_ID']), '">Rendu</a><br/>';
 					}
 					$req5->closeCursor();
