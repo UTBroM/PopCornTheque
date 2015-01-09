@@ -1,24 +1,30 @@
 html{
 	font-family: 'Lato', sans-serif;
+	display: block;
 }
 body{
+	display: block;
 	background-color: #2E2F2F;
 	color: white;
 }
 p{
+	display: block;
 	border-top: 1em;
 }
 
 h1{
+	display: block;
 	text-align: center;
 	border-top: 2.5em;
 	padding: 0.47em 1em;
 }
 h3{
+	display: block;
 	font-size: 0.7em;
 	padding: 0.3em;
 }
 h4{
+	display: block;
 	font-size: 0.5em;
 	padding: 0.3em;
 }
@@ -31,14 +37,17 @@ h4:hover{
 }
 
 ul{
+	display: block;
 	list-style-type: none;
 	font-size: x-large;
 	padding-left: 0px;
 }
 a{
+	display: block;
 	color: white;
 }
 nav{
+	display: block;
 	border-top: 2px solid white;
 	border-bottom: 2px solid white;
 	padding: 0.3em;
@@ -81,7 +90,6 @@ nav ul li a:hover, nav ul li.active a{
         padding-bottom: 2px;
 	color: #4099E6;
 }
-
 
 #badge-plus {
 
@@ -160,27 +168,21 @@ nav ul li a:hover, nav ul li.active a{
 	float: left;
 }
 .tableau-film img{
-
 	height: 15em;
 	box-shadow: 0.3em 0.3em 1em #000000;
 
 }
 .tableau-film img:hover{
-
 	box-shadow: 0.3em 0.3em 3em #000000;
 	opacity: 0.7;
 
 }
-.loupe{
-	height: 2em;
-}
 .profil{
 	text-align: center;
 }
-
 .recherche{
 	right: 0.5em;
-	top: 0em;
+	top: 15em;
 	position: absolute;
 }
 .recherche img{
