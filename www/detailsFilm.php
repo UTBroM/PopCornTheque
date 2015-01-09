@@ -43,8 +43,8 @@
 		echo '<h2>Commentaires :</h2><ul>';
 		while($donnees = $req3->fetch()){
 
-			echo '<li><h3>', htmlspecialchars($donnees['UTI_ID']), '</h3><h4>', date("d/m/Y", strtotime($donnees['COMF_DATE'])), "</h4><h4>Note : ", $donnees['COMF_NOTE'], '/10</h4></li>';
-			echo '<li>', htmlspecialchars($donnees['COMF_CONTENU']), '</li>';
+			echo '<li><h5>', htmlspecialchars($donnees['UTI_ID']), 'le ', date("d/m/Y", strtotime($donnees['COMF_DATE'])), "</h5><h5>Note : ", $donnees['COMF_NOTE'], '/10</h5></li>';
+			echo '<li><p>', htmlspecialchars($donnees['COMF_CONTENU']), '</p></li>';
 
 		}
 		echo '</ul>';
